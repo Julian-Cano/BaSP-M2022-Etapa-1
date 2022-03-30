@@ -4,8 +4,8 @@ Trackgenix is a web application that lets you keep track of work hours in softwa
 Arranged by project teams, employees and PMs will be able to register (and supervise) theirs work hours in the projects they are working on. This lets the central administration assigne their proper payment to every team member.
 ## Core Functionaliies
 ```
-i. Log in system for every individual team member.
-ii. Record work hours in timesheet day by day.
+i. Log-in system for every individual team member.
+ii. Recording work hours in timesheet day by day.
 iii. Capability of generating weekly reports per project and per employee (PMs and supervisors only).
 ```
 ## How to use Trackgenix?
