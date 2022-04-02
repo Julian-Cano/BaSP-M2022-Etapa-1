@@ -1,22 +1,30 @@
-/* Shared assets
-### Primary colors ###
-    Grayish Navy
-rgba(55, 56, 103)
-#373867
-    Light Grayis Green
-rgba(170, 206, 155)
-#AACE9B
-    White
-rgba(255, 255, 255)
-#FFFFFF
-#FFF
+/* font-family: 'Open Sans', sans-serif; */
 
-### Secondary colors ###
-    Grayish Navy
-rgba(55, 56, 103, 0.4)
-rgba(55, 56, 103, 0.1)
-    Light Grayish Green
-rgba(170, 206, 155, 0.1)
+body {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
 
-Shared assets */ 
+header, footer {
+    width: 100%;
+    background-color: #373867;
+}
 
+header {
+    height: 91px;
+    position: fixed;
+}
+
+footer {
+    height: 104px;
+    position: fixed;
+    bottom: 0;
+}
+
+aside {
+    background-color: #AACE9B;
+    height: 835px;
+    width: 300px;
+    position: fixed;
+    top: 91px;
+}
