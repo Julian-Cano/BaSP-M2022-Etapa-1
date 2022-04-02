@@ -5,26 +5,120 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-header, footer {
-    width: 100%;
-    background-color: #373867;
+a {
+    color: #373867;
+    text-decoration: none;
 }
 
-header {
-    height: 91px;
-    position: fixed;
+.clear {
+    clear: both;
 }
+
+.img {
+    height: auto;
+}
+
+header, footer, aside {
+    position: fixed;
+    z-index: 100;
+}
+
+header, footer {
+    background-color: #373867;
+    width: 100%;
+}
+/*header*/
+header {
+    height: 90px;
+    top: 0;
+}
+
+#header-logo {
+    position: absolute;
+    width: 45px;
+    left: 50%;
+    top: 50%;
+}
+
+header button {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    background-color: #AACE9B;
+    color: #373867;
+    padding: 10px 24px 10px 24px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+    text-align: center;
+}
+/*end header*/
 
 footer {
     height: 104px;
-    position: fixed;
     bottom: 0;
 }
-
+/* aside */
 aside {
     background-color: #AACE9B;
     height: 835px;
     width: 300px;
-    position: fixed;
-    top: 91px;
+    top: 90px;
 }
+
+aside nav div {
+    font-style: normal;
+    color: #373867;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    margin: 60px 0 0 32px;
+}
+
+#nav-br {
+    width: 180px;
+    border: 3px solid #373867;
+    background-color: #373867;
+    margin: 36px 0 13px 32px;
+}
+
+aside li {
+    width: 241px;
+    height: 36px;
+    background-color: #fff;
+    box-shadow: 0px 2px 0px #373867;
+    margin: 0 0 23px 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 10px 0 0 10px;
+    box-sizing: border-box;
+}
+/* end aside */
+
+section {
+    margin: 90px 0 0 300px;
+    padding-bottom: 104px;
+}
+/*section home*/
+#home {
+    background-image: url(../assets/front-image.jpg);
+}
+#home h1 {
+    text-transform: capitalize;
+    color: #fff;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 47px;
+    /* identical to box height */
+    text-align: center;
+}
+#home img {
+    margin-left: 0 50%;
+}
+/*end section home*/
