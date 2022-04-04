@@ -1,16 +1,13 @@
-/* font-family: 'Open Sans', sans-serif; */
-
 body {
     background-color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
-
-body p, h2, h3, h4, ol, ul {
+/* general styles */
+p, h2, h3, h4, ol, ul, a {
     color: #373867;
 }
 
 a {
-    color: #373867;
     text-decoration: none;
 }
 
@@ -22,10 +19,8 @@ a {
     height: auto;
 }
 
-.div-sep {
+header, footer, .div-sep {
     width: 100%;
-    height: 60px;
-    background-color: #49A37B;
 }
 
 header, footer, aside {
@@ -35,8 +30,80 @@ header, footer, aside {
 
 header, footer {
     background-color: #373867;
-    width: 100%;
 }
+
+.div-sep {
+    height: 60px;
+    background-color: #49A37B;
+}
+/* text styles */
+.header {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.sub-header {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.component-body {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.secondary-body {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.large-body {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.body {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.small-body {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+/* end text styles */
+/* end general styles */
 /*header*/
 header {
     height: 90px;
@@ -50,7 +117,7 @@ header {
     top: 15px;
 }
 
-header button {
+#sign-up {
     position: relative;
     float: right;
     background-color: #AACE9B;
@@ -160,3 +227,26 @@ main {
     margin: 0 auto 185px auto;
 }
 /*end section home*/
+/* section #im-trackgenix */
+#im-trackgenix .title {
+    color: rgba(55, 56, 103, 0.7);
+    font-size: 30px;
+    line-height: 35px;
+}
+/* end section #im-trackgenix */
+/* section #what-can-i-do */
+#what-can-i-do .title {
+    font-size: 26px;
+}
+/* end section #what-can-i-do */
+/* section #contact-us */
+#contact-us .title {
+    font-size: 30px;
+    line-height: 35px;
+}
+
+#contact-us .sub-header {
+    font-size: 20px;
+    line-height: 23px;
+}
+/* end section #contact-us */

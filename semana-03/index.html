@@ -20,7 +20,7 @@
     <body>
         <header>
             <img src="assets/header-logo.png" id="header-logo" class="img">
-            <button>Sign Up</button>
+            <button id="sign-up">Sign Up</button>
         </header>
         <aside>
             <nav>
@@ -54,16 +54,16 @@
                 <img src="assets/trackgenix-logo.png" alt="Trackgenix logo: a clock inside a shield">
             </section>
             <section id="im-trackgenix" class="clear">
-                <h2>Hi, I’m Trackgenix by Baltazar’s Team</h2>
-                <p>
+                <h2 class="header">Hi, I’m Trackgenix by Baltazar’s Team</h2>
+                <p class="title">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit
                 </p>
-                <p>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in
                     cididunt ut labore et dolore magna aliqua.
                 </p>
-                <p>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in
                     cididunt ut labore et dolore magna aliqua.
@@ -72,48 +72,48 @@
             </section>
             <div class="div-sep"></div>
             <section id="what-can-i-do" class="clear">
-                <h3>What can I do & why choose me?</h3>
+                <h3 class="header">What can I do & why choose me?</h3>
                 <img src="assets/shield-icon.png" alt="A shield picture.">
-                <h4>Decision Making</h4>
-                <p>
+                <h4 class="title">Decision Making</h4>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </p>
                 <img src="assets/bars-icon.png" alt="">
-                <h4>Reports and Traceability</h4>
-                <p>
+                <h4 class="title">Reports and Traceability</h4>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </p>
                 <img src="assets/productivity-icon.png" alt="">
-                <h4>Productivity Booster</h4>
-                <p>
+                <h4 class="title">Productivity Booster</h4>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </p>
                 <img src="assets/network-icon.png" alt="">
-                <h4>Resource Management</h4>
-                <p>
+                <h4 class="title">Resource Management</h4>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </p>
                 <img src="assets/leadership-icon.png" alt="">
-                <h4>Leadership</h4>
-                <p>
+                <h4 class="title">Leadership</h4>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </p>
                 <img src="assets/clock-icon.png" alt="">
-                <h4>Hours Log</h4>
-                <p>
+                <h4 class="title">Hours Log</h4>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </p>
             </section>
             <div class="div-sep"></div>
             <section id="about-us" class="clear">
-                <h3>About Us</h3>
-                <p>
+                <h3 class="header">About Us</h3>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in
                     cididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, se
@@ -124,7 +124,7 @@
                 </p>
                 <img src="assets/aboutus-1.png" alt="Man and woman working on a computers.">
                 <img src="assets/aboutus-2.png" alt="Group of co-workers having a meeting.">
-                <p>
+                <p class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in
                     cididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, se
@@ -136,7 +136,7 @@
             </section>
             <div class="div-sep"></div>
             <section id="contact-us" class="clear">
-                <h3>Contact Us</h3>
+                <h3 class="header">Contact Us</h3>
                 <form>
                     <div>
                         <label for="username">Username</label>
@@ -163,64 +163,68 @@
                         <label for="message">Type a message</label>
                         <textarea id="message" name="message" placeholder="Leave your message"></textarea>
                     </div>
-                    <input type="submit" value="Submit">
+                    <input id="submit" type="submit" value="Submit">
                 </form>
                 <img src="assets/home-icon.png" alt="">
-                <address>
+                <address class="sub-header">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.
                 </address>
                 <img src="assets/phone-icon.png" alt="">
-                <p>974040000/974040001/974040002</p>
-                <p>+99 9 999 999-9999</p>
-                <p>+11 1 111 111-1111</p>
+                    <ul>
+                        <li class="sub-header">974040000/974040001/974040002</li>
+                        <li class="sub-header">+99 9 999 999-9999</li>
+                        <li class="sub-header">+11 1 111 111-1111</li>
+                    </ul>
                 <img src="assets/mail-icon.png" alt="">
-                <p>Lorem-ipsum@dolorsit.amet</p>
-                <p>consecteturadipisicing@elit.seddo</p>
-                <p>eiusmod_tempor@incididunt.ut</p>
-                <p>labore-et-dolore@magna.aliqua</p>
-                <h4>Products:</h4>
+                    <ul>
+                        <li class="sub-header"> Lorem-ipsum@dolorsit.amet</li>
+                        <li class="sub-header">consecteturadipisicing@elit.seddo</li>
+                        <li class="sub-header">eiusmod_tempor@incididunt.ut</li>
+                        <li class="sub-header">labore-et-dolore@magna.aliqua</li>
+                    </ul>
+                <h4 class="title">Products:</h4>
                 <ol>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Features</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Downloads</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Integrations</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Additional features</a>
                     </li>
                 </ol>
-                <h4>Business:</h4>
+                <h4 class="title">Business:</h4>
                 <ol>
-                    <li>
+                    <li class="subheader">
                         <a href="#">About us</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Costumers</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Resources</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Blog</a>
                     </li>
                 </ol>
-                <h4>Support:</h4>
+                <h4 class="title">Support:</h4>
                 <ol>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Help</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Tutorials</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">API</a>
                     </li>
-                    <li>
+                    <li class="subheader">
                         <a href="#">Contact</a>
                     </li>
                 </ol>
