@@ -1,14 +1,16 @@
-body {
-    background-color: #fff;
-    font-family: 'Open Sans', sans-serif;
-}
-/* general styles */
-p, h2, h3, h4, ol, ul, a {
-    color: #373867;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    background-color: #fff;
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+}
+/* general styles */
 a {
     text-decoration: none;
+    color: #373867;
 }
 
 .clear {
@@ -19,7 +21,7 @@ a {
     height: auto;
 }
 
-header, footer, .div-sep {
+header, footer {
     width: 100%;
 }
 
@@ -32,73 +34,58 @@ header, footer {
     background-color: #373867;
 }
 
-.div-sep {
-    height: 60px;
-    background-color: #49A37B;
-}
 /* text styles */
-.header {
+.header, .title, .sub-header, .component-body, .secondary-body, .button, .large-body, .body, .small-body {
     font-style: normal;
+}
+.header, .title, .button {
     font-weight: 700;
+}
+.sub-header, .secondary-body, .large-body, .body, .small-body {
+    font-weight: 400;
+}
+.header {
     font-size: 40px;
     line-height: 47px;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
 .title {
-    font-style: normal;
-    font-weight: 700;
     font-size: 14px;
     line-height: 16px;
 }
 
 .sub-header {
-    font-style: normal;
-    font-weight: 400;
     font-size: 20px;
     line-height: 23px;
 }
 
 .component-body {
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
 }
 
 .secondary-body {
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 14px;
 }
 
 .button {
-    font-style: normal;
-    font-weight: 700;
     font-size: 15px;
     line-height: 18px;
 }
 
 .large-body {
-    font-style: normal;
-    font-weight: 400;
     font-size: 20px;
     line-height: 30px;
 }
 
 .body {
-    font-style: normal;
-    font-weight: 400;
     font-size: 15px;
     line-height: 24px;
 }
 
 .small-body {
-    font-style: normal;
-    font-weight: 400;
     font-size: 12px;
     line-height: 18px;
 }
@@ -111,8 +98,9 @@ header {
 }
 
 #header-logo {
-    position: absolute;
+    position: relative;
     width: 45px;
+    height: 61px;
     left: 50%;
     top: 15px;
 }
@@ -125,10 +113,10 @@ header {
     padding: 10px 24px;
     border-radius: 5px;
     margin: 28px;
-    font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 12px;
     line-height: 14px;
+    border: none;
 }
 /*end header*/
 /*footer*/
@@ -155,8 +143,6 @@ footer ul {
 }
 footer li {
     display: inline-block;
-}
-footer img {
     margin: 0 7px;
 }
 /*end footer*/
@@ -169,19 +155,16 @@ aside {
 }
 
 aside nav div {
+    width: 180px;
     font-style: normal;
     color: #373867;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
     margin: 60px 0 0 32px;
-}
-
-#nav-br {
-    width: 180px;
-    border: 3px solid #373867;
-    background-color: #373867;
-    margin: 36px 0 13px 32px;
+    padding-bottom: 33px;
+    border-bottom: 3px solid #373867;
+    margin-bottom: 13px;
 }
 
 aside li {
@@ -197,26 +180,31 @@ aside li {
     padding: 10px 0 0 10px;
     box-sizing: border-box;
 }
+aside a {
+    display: block;
+}
 /* end aside */
 
 main {
     margin: 90px 0 0 300px;
     padding-bottom: 104px;
 }
+section {
+    border-bottom: 60px solid #49A37B;
+}
 /*section home*/
 #home {
     background-image: url(../assets/front-image.jpg);
-    background-position: center top;
-    background-repeat: no-repeat;
+    background-position: left top;
     background-size: cover;
-    padding-top: 134px;
+    padding: 134px 0 156px 0;
 }
 
 #home h1 {
     text-transform: uppercase;
     color: #fff;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 40px;
     line-height: 47px;
     text-align: center;
@@ -224,14 +212,30 @@ main {
 
 #home img {
     display: block;
-    margin: 0 auto 185px auto;
+    margin: 0 auto;
 }
 /*end section home*/
 /* section #im-trackgenix */
+#im-trackgenix {
+    padding: 48px 121px 60px 85px;
+}
 #im-trackgenix .title {
     color: rgba(55, 56, 103, 0.7);
     font-size: 30px;
     line-height: 35px;
+}
+#im-trackgenix h2, #im-trackgenix p {
+    width: 50%;
+    text-align: center;
+    max-width: 366px;
+    margin-bottom: 36px;
+
+}
+#im-trackgenix img {
+    width: 50%;
+    max-width: 430px;
+    position: relative;
+    float: right;
 }
 /* end section #im-trackgenix */
 /* section #what-can-i-do */
@@ -240,6 +244,10 @@ main {
 }
 /* end section #what-can-i-do */
 /* section #contact-us */
+#contact-us {
+    border: none;
+}
+
 #contact-us .title {
     font-size: 30px;
     line-height: 35px;
