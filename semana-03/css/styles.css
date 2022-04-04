@@ -83,10 +83,12 @@ footer address, p {
     font-size: 14px;
     line-height: 16px;
 }
-footer div {
+footer ul {
     margin-top: 17px;
 }
-
+footer li {
+    display: inline-block;
+}
 footer img {
     margin: 0 7px;
 }
@@ -130,7 +132,7 @@ aside li {
 }
 /* end aside */
 
-section {
+main {
     margin: 90px 0 0 300px;
     padding-bottom: 104px;
 }
