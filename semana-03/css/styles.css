@@ -134,7 +134,7 @@ footer > * {
 footer p {
     color: #AACE9B;
 }
-footer address, p {
+footer address, footer p {
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -179,12 +179,12 @@ aside li {
     font-size: 20px;
     line-height: 23px;
     box-sizing: border-box;
+    box-shadow: 0px 2px 0px #373867;
 }
 aside a {
     display: block;
     line-height: 36px;
     padding: 2px 0 0 10px;
-    box-shadow: 0px 2px 0px #373867;
 }
 /* end aside */
 
@@ -195,6 +195,9 @@ main {
 section {
     border-bottom: 60px solid #49A37B;
 }
+section:first-child, section:last-child {
+    border: none;
+}
 /*section home*/
 #home {
     background-image: url(../assets/front-image.jpg);
@@ -202,7 +205,6 @@ section {
     background-size: cover;
     padding: 134px 0 156px 0;
     min-height: 830px;
-    border: none;
 }
 
 #home h1 {
@@ -296,19 +298,18 @@ section {
 }
 #p-about-us-2 {
     text-align: right;
+    float: right;
 }
 #img-about-us-1 {
     float: right;
     margin-left: 66px;
 }
 #img-about-us-2 {
-    float: left;
     margin-right: 66px;
 }
 /* end #about us */
 /* section #contact-us */
 #contact-us {
-    border: none;
     padding: 52px 45px 80px;
 }
 #contact-us .container {
@@ -342,6 +343,10 @@ form input, form select, form textarea {
     border: 1px solid #373867;
     border-radius: 4px;
     padding-left: 12px;
+    color: #373867;
+}
+form select:first-child {
+    color: rgba(55, 56, 103, 0.5);
 }
 form textarea {
     min-height: 100px;
