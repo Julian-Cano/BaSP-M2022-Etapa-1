@@ -71,7 +71,6 @@
             </section>
             <section id="what-can-i-do" class="clear">
                 <h3 class="header" class="clear">What can I do & why choose me?</h3>
-                
                 <div>
                     <h4 class="title">Resource Management</h4>
                     <img src="assets/network-icon.png" alt="Organization chart picture.">
@@ -88,7 +87,6 @@
                         dolore magna aliqua.
                     </p>
                 </div>
-                
                 <div>
                     <h4 class="title">Leadership</h4>
                     <img src="assets/leadership-icon.png" alt="Comunication picture.">
@@ -105,7 +103,6 @@
                         dolore magna aliqua.
                     </p>
                 </div>
-                
                 <div>
                     <h4 class="title">Hours Log</h4>
                     <img src="assets/clock-icon.png" alt="Clock picture.">
@@ -148,100 +145,114 @@
             </section>
             <section id="contact-us" class="clear">
                 <h3 class="header">Contact Us</h3>
-                <form>
+                <div class="container">
+                    <form class="component-body">
+                        <div>
+                            <label for="username">Username</label>
+                            <input id="username" type="text" name="username" placeholder="Click on me to write">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" placeholder="email@email.com">
+                        </div>
+                        <div>
+                            <label for="sector">Sector</label>
+                            <select class="component-body" id="sector" name="sector">
+                                <option>Select one...</option>
+                                <option value="admin">Administration</option>
+                                <option value="pm">Management</option>
+                                <option value="employee">Developer Team</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="phone-number">PhoneNumber (Optional)</label>
+                            <input id="phone-number" type="number" name="phone-number" placeholder="+12 3 456-789">
+                        </div>
+                        <div>
+                            <label for="message">Type a message</label>
+                            <textarea id="message" name="message" class="component-body" placeholder="Leave your message"></textarea>
+                        </div>
+                        <input id="submit" type="submit" value="Submit">
+                    </form>
+                        <address class="sub-header">
+                            <div>
+                                <img src="assets/home-icon.png" alt="House picture.">
+                                <p class="sub-header data">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="assets/phone-icon.png" alt="Phone picture.">
+                                <ul class="data">
+                                    <li>974040000/974040001/974040002</li>
+                                    <li>+99 9 999 999-9999</li>
+                                    <li>+11 1 111 111-1111</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="assets/mail-icon.png" alt="Mail envelope.">
+                                <ul class="data">
+                                    <li>Lorem-ipsum@dolorsit.amet</li>
+                                    <li>consecteturadipisicing@elit.seddo</li>
+                                    <li>eiusmod_tempor@incididunt.ut</li>
+                                    <li>labore-et-dolore@magna.aliqua</li>
+                                </ul>
+                            </div>
+                        </address>
+                </div>    
+                <div id="pbs">
                     <div>
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="Click on me to write">
+                        <h4 class="title">Products:</h4>
+                        <ol class="sub-header">
+                            <li>
+                                <a href="#">Features</a>
+                            </li>
+                            <li>
+                                <a href="#">Downloads</a>
+                            </li>
+                            <li>
+                                <a href="#">Integrations</a>
+                            </li>
+                            <li>
+                                <a href="#">Additional features</a>
+                            </li>
+                        </ol>
                     </div>
                     <div>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="email@email.com">
+                        <h4 class="title">Business:</h4>
+                        <ol class="sub-header">
+                            <li>
+                                <a href="#">About us</a>
+                            </li>
+                            <li>
+                                <a href="#">Costumers</a>
+                            </li>
+                            <li>
+                                <a href="#">Resources</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                        </ol>
                     </div>
                     <div>
-                        <label for="sector">Sector</label>
-                        <select id="sector" name="sector">
-                            <option>Select one...</option>
-                            <option value="admin">Administration</option>
-                            <option value="pm">Management</option>
-                            <option value="employee">Developer Team</option>
-                        </select>
+                        <h4 class="title">Support:</h4>
+                        <ol class="sub-header">
+                            <li>
+                                <a href="#">Help</a>
+                            </li>
+                            <li>
+                                <a href="#">Tutorials</a>
+                            </li>
+                            <li>
+                                <a href="#">API</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ol>
                     </div>
-                    <div>
-                        <label for="phone-number">PhoneNumber (Optional)</label>
-                        <input type="number" id="phone-number" name="phone-number" placeholder="+12 3 456-789">
-                    </div>
-                    <div>
-                        <label for="message">Type a message</label>
-                        <textarea id="message" name="message" placeholder="Leave your message"></textarea>
-                    </div>
-                    <input id="submit" type="submit" value="Submit">
-                </form>
-                <address class="sub-header">
-                    <img src="assets/home-icon.png" alt="House picture.">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua.
-                    </p>
-                    <img src="assets/phone-icon.png" alt="Phone picture.">
-                    <ul>
-                        <li>974040000/974040001/974040002</li>
-                        <li>+99 9 999 999-9999</li>
-                        <li>+11 1 111 111-1111</li>
-                    </ul>
-                    <img src="assets/mail-icon.png" alt="Mail envelope.">
-                    <ul>
-                        <li>Lorem-ipsum@dolorsit.amet</li>
-                        <li>consecteturadipisicing@elit.seddo</li>
-                        <li>eiusmod_tempor@incididunt.ut</li>
-                        <li>labore-et-dolore@magna.aliqua</li>
-                    </ul>
-                </address>
-                <h4 class="title">Products:</h4>
-                <div>
-                    <ol class="subheader">
-                        <li>
-                            <a href="#">Features</a>
-                        </li>
-                        <li>
-                            <a href="#">Downloads</a>
-                        </li>
-                        <li>
-                            <a href="#">Integrations</a>
-                        </li>
-                        <li>
-                            <a href="#">Additional features</a>
-                        </li>
-                    </ol>
-                    <h4 class="title">Business:</h4>
-                    <ol class="subheader">
-                        <li>
-                            <a href="#">About us</a>
-                        </li>
-                        <li>
-                            <a href="#">Costumers</a>
-                        </li>
-                        <li>
-                            <a href="#">Resources</a>
-                        </li>
-                        <li>
-                            <a href="#">Blog</a>
-                        </li>
-                    </ol>
-                    <h4 class="title">Support:</h4>
-                    <ol class="subheader">
-                        <li>
-                            <a href="#">Help</a>
-                        </li>
-                        <li>
-                            <a href="#">Tutorials</a>
-                        </li>
-                        <li>
-                            <a href="#">API</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ol>
                 </div>
             </section>
         </main> 

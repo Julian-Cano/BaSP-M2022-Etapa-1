@@ -173,17 +173,18 @@ aside li {
     width: 241px;
     height: 36px;
     background-color: #fff;
-    box-shadow: 0px 2px 0px #373867;
     margin: 0 0 23px 32px;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
-    padding: 10px 0 0 10px;
     box-sizing: border-box;
 }
 aside a {
     display: block;
+    line-height: 36px;
+    padding: 2px 0 0 10px;
+    box-shadow: 0px 2px 0px #373867;
 }
 /* end aside */
 
@@ -200,6 +201,8 @@ section {
     background-position: left top;
     background-size: cover;
     padding: 134px 0 156px 0;
+    min-height: 830px;
+    border: none;
 }
 
 #home h1 {
@@ -240,7 +243,7 @@ section {
 /* end section #im-trackgenix */
 /* section #what-can-i-do */
 #what-can-i-do {
-    padding: 53px 56px;
+    padding: 53px 56px 0;
 }
 #what-can-i-do h3 {
     text-align: center;
@@ -306,15 +309,94 @@ section {
 /* section #contact-us */
 #contact-us {
     border: none;
+    padding: 52px 45px 80px;
 }
-
+#contact-us .container {
+    width: 856px;
+    height: 570px;
+    margin: 35px 96px 20px;
+}
 #contact-us .title {
     font-size: 30px;
     line-height: 35px;
 }
-
 #contact-us .sub-header {
     font-size: 20px;
     line-height: 23px;
+}
+form {
+    padding-right: 170px;
+}
+form, #contact-us address {
+    width: 428px;
+    float: left;
+}
+form * {
+    display: block;
+    width: 100%;
+}
+form input, form select, form textarea {
+    height: 37px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    padding-left: 12px;
+}
+form textarea {
+    min-height: 100px;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-bottom: 45px;
+}
+form label {
+    margin-bottom: 7px;
+}
+#submit {
+    background-color: #AACE9B;
+    color: #373867;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+}
+#contact-us address {
+    padding: 69px 0;
+}
+#contact-us address div {
+    width: 426px;
+    height: 150px;
+    vertical-align: middle;
+}
+#contact-us img, .data {
+    display: inline-block;
+    margin: auto ;
+}
+.data  {
+    width: 326px;
+    float: right;
+}
+#contact-us img {
+    width: 80px;
+    margin-right: 20px;
+}
+#pbs {
+    width: 1050px;
+    height: 170px;
+    margin-top: 19px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 19px 86px 0;
+}
+#pbs div {
+    width: 200px;
+    float: left;
+    margin: 0 45px;
+}
+#pbs h4 {
+    margin-bottom: 20px;
+}
+#pbs ol {
+    list-style-type: decimal;
+    padding-left: 28px;
 }
 /* end section #contact-us */
