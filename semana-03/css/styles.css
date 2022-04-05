@@ -190,8 +190,6 @@ aside a {
 main {
     margin: 90px 0 0 300px;
     padding-bottom: 104px;
-    max-width: 1140px;
-    width: 100%;
 }
 section {
     border-bottom: 60px solid #49A37B;
@@ -248,15 +246,33 @@ section {
     text-align: center;
     margin-bottom: 60px;
 }
+#what-can-i-do div {
+    width: 438px;
+    height: 118px;
+    margin-bottom: 100px;
+}
+#what-can-i-do div:nth-child(even) {
+    float: right;
+}
+#what-can-i-do h4 {
+    width: 322px;
+    margin-bottom: 10px;
+    float: right;
+    left: 115px;
+}
 #what-can-i-do .title {
     font-size: 26px;
 }
-
-#what-can-i-do h4, #what-can-i-do p {
-    width: 326px;
+#what-can-i-do p {
+    display: inline-block;
+    width: 322px;
+    float: right;
 }
 #what-can-i-do img {
     width: 100px;
+    display: inline-block;
+    margin-right: 12px;
+    float: left;
 }
 /* end section #what-can-i-do */
 /* #about us */
@@ -270,7 +286,7 @@ section {
     display: inline-block;
 }
 #about-us p {
-    max-width: 626px;
+    max-width: 609px;
 }
 #p-about-us-1 {
     margin-bottom: 81px;
@@ -287,8 +303,6 @@ section {
     margin-right: 66px;
 }
 /* end #about us */
-
-
 /* section #contact-us */
 #contact-us {
     border: none;
