@@ -203,7 +203,7 @@ section:first-child, section:last-child {
     background-image: url(../assets/front-image.jpg);
     background-position: left top;
     background-size: cover;
-    padding: 134px 0 156px 0;
+    padding: 224px 0 156px 0;
     min-height: 830px;
 }
 
@@ -224,7 +224,7 @@ section:first-child, section:last-child {
 /*end section home*/
 /* section #im-trackgenix */
 #im-trackgenix {
-    padding: 75px 121px 60px 85px;
+    padding: 165px 121px 60px 85px;
 }
 #im-trackgenix .title {
     color: rgba(55, 56, 103, 0.7);
@@ -245,7 +245,7 @@ section:first-child, section:last-child {
 /* end section #im-trackgenix */
 /* section #what-can-i-do */
 #what-can-i-do {
-    padding: 53px 56px 0;
+    padding: 143px 56px 0;
 }
 #what-can-i-do h3 {
     text-align: center;
@@ -282,7 +282,7 @@ section:first-child, section:last-child {
 /* end section #what-can-i-do */
 /* #about us */
 #about-us {
-    padding: 61px 42px;
+    padding: 151px 42px 61px;
 }
 #about-us h3 {
     margin-bottom: 85px;
@@ -310,7 +310,7 @@ section:first-child, section:last-child {
 /* end #about us */
 /* section #contact-us */
 #contact-us {
-    padding: 52px 45px 80px;
+    padding: 142px 45px 80px;
 }
 #contact-us .container {
     width: 856px;
