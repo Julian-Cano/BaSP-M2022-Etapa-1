@@ -10,6 +10,10 @@ a {
     color: #373867;
 }
 
+h2, h3 {
+    text-align: center;
+}
+
 .border-box {
     box-sizing: border-box;
 }
@@ -17,12 +21,15 @@ a {
 .header, .title, .sub-header, .component-body, .secondary-body, .button, .large-body, .body, .small-body {
     font-style: normal;
 }
+
 .header, .title, .button {
     font-weight: 700;
 }
+
 .sub-header, .secondary-body, .large-body, .body, .small-body {
     font-weight: 400;
 }
+
 .header {
     font-size: 40px;
     line-height: 47px;
