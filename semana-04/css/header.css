@@ -1,0 +1,33 @@
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    background-color: #373867;
+    width: 100%;
+    height: 90px;
+}
+
+header nav {
+    width: 25px;
+    height: 25px;
+    margin-left: 62px;
+    background-color: #AACE9B;
+}
+
+#header-logo {
+    width: 45px;
+    height: 61px;
+}
+
+#sign-up {
+    padding: 10px 13px;
+    margin-right: 28px;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 5px;
+    color: #373867;
+    font-weight: bold !important;
+}

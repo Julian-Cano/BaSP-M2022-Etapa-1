@@ -1,4 +1,5 @@
 body {
+    box-sizing: border-box;
     background-color: #fff;
     color: #373867;
     font-family: 'Roboto', sans-serif;
@@ -7,4 +8,63 @@ body {
 a {
     text-decoration: none;
     color: #373867;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.header, .title, .sub-header, .component-body, .secondary-body, .button, .large-body, .body, .small-body {
+    font-style: normal;
+}
+.header, .title, .button {
+    font-weight: 700;
+}
+.sub-header, .secondary-body, .large-body, .body, .small-body {
+    font-weight: 400;
+}
+.header {
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.title {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.sub-header {
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.component-body {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.secondary-body {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.button {
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.large-body {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.body {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.small-body {
+    font-size: 12px;
+    line-height: 18px;
 }
