@@ -18,6 +18,10 @@ h2, h3 {
     box-sizing: border-box;
 }
 
+.img {
+    height: auto;
+}
+
 .header, .title, .sub-header, .component-body, .secondary-body, .button, .large-body, .body, .small-body {
     font-style: normal;
 }
