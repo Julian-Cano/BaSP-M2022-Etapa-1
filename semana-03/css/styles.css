@@ -271,13 +271,11 @@ section:first-child, section:last-child {
 #what-can-i-do p {
     display: inline-block;
     width: 322px;
-    float: right;
 }
 #what-can-i-do img {
     width: 100px;
     display: inline-block;
     margin-right: 12px;
-    float: left;
 }
 /* end section #what-can-i-do */
 /* #about us */

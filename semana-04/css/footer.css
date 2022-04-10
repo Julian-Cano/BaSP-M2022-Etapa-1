@@ -10,9 +10,9 @@ footer {
     height: 104px;
     background-color: #373867;
     color: #AACE9B;
-    text-align: center;
 }
-footer > * {
+
+footer ul, footer address {
     margin-bottom: 2px;
 }
 

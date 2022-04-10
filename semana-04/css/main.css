@@ -30,8 +30,8 @@ section:first-child, section:last-child {
 }
 
 #home img {
-    width: 338px;
-    height: 412px;
+    width: 100%;
+    max-width: 338px;
 }
 
 #im-trackgenix {
@@ -41,8 +41,8 @@ section:first-child, section:last-child {
 
 #im-trackgenix img {
     order: 1;
-    width: 300px;
-    height: 450px;
+    width: 100%;
+    max-width: 300px;
 }
 
 #im-trackgenix h2, #im-trackgenix p {
@@ -110,7 +110,7 @@ section:first-child, section:last-child {
 }
 
 #about-us img {
-    width: 376px;
+    width: 100%;
 }
 
 #about-us img:last-of-type {
@@ -130,7 +130,10 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    width: 100%;
     padding: 0 75px;
+    margin-bottom: 10px;
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
@@ -141,10 +144,7 @@ form {
     flex-direction: column;
     width: 100%;
     margin-bottom: 50px;
-}
-
-.data:last-of-type {
-
+    
 }
 
 form label {
@@ -179,4 +179,62 @@ form textarea {
     font-size: 12px;
     line-height: 14px;
     font-weight: 700;
+}
+
+#contact-us address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 25px;
+}
+
+#contact-us address div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 80px;
+}
+
+#contact-us address img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+#contact-us address div:last-of-type {
+    margin: 0;
+}
+
+.pbs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    border-top: 60px solid #49A37B;
+}
+
+.pbs div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+}
+
+.pbs div:nth-child(2) {
+    margin: 55px 0;
+}
+
+.pbs h4 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.pbs ol {
+    padding-left: 23px;
+    list-style-type: decimal;
 }
