@@ -10,11 +10,12 @@ header {
     height: 90px;
 }
 
-header nav {
+.nav-bar {
     width: 25px;
     height: 25px;
     margin-left: 62px;
-    background-color: #AACE9B;
+    border: none;
+    background-color: #373867;
 }
 
 #header-logo {
@@ -22,7 +23,7 @@ header nav {
     height: 61px;
 }
 
-#sign-up {
+.sign-up {
     padding: 10px 13px;
     margin-right: 28px;
     background-color: #AACE9B;
