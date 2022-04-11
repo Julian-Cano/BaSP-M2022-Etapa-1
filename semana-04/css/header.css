@@ -18,7 +18,7 @@ header {
     background-color: #373867;
 }
 
-#header-logo {
+.header-logo {
     width: 45px;
     height: 61px;
 }
@@ -31,4 +31,15 @@ header {
     border-radius: 5px;
     color: #373867;
     font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+
+    .nav-bar {
+        display: none;
+    }
+
+    .header-logo {
+        margin-left: 46.5%;
+    }
 }

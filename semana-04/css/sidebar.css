@@ -4,18 +4,87 @@ aside {
 
 @media screen and (min-width: 768px) {
 
+/*     aside {
+        display: block;
+        position: fixed;
+        top: 90px;
+        z-index: 100;
+        width: 30%;
+        height: 100%;
+        background-color: #AACE9B;
+    } */
+
     aside {
         display: block;
+        position: fixed;
+        top: 90px;
+        z-index: 100;
+        width: 30%;
+        height: 100%;
+        background-color: #AACE9B;
     }
 
+/*     aside nav div {
+        width: 80%;
+        font-style: normal;
+        color: #373867;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+        margin: 60px 0 0 32px;
+        padding-bottom: 33px;
+        border-bottom: 3px solid #373867;
+        margin-bottom: 13px;
+    } */
 
+    aside nav div {
+        width: 80%;
+        font-style: normal;
+        color: #373867;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+        margin: 10% 0 0 5%;
+        padding-bottom: 5%;
+        border-bottom: 3px solid #373867;
+        margin-bottom: 3%;
+    }
 
+/*     aside li {
+        width: 80%;
+        height: auto;
+        background-color: #fff;
+        margin: 0 0 23px 32px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        box-sizing: border-box;
+        box-shadow: 0px 2px 0px #373867;
+    }
+ */
+    aside li {
+        width: 80%;
+        height: auto;
+        background-color: #fff;
+        margin: 0 0 4% 5%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        box-sizing: border-box;
+        box-shadow: 0px 2px 0px #373867;
+    }
 
+/*     aside a {
+        display: block;
+        line-height: 36px;
+        padding: 2px 0 0 10px;
+    } */
 
-
-
-
-
-
+    aside a {
+        display: block;
+        line-height: 120%;
+        padding: 2px 0 0 10px;
+    }
 
 }
