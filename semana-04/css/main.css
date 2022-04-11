@@ -132,11 +132,18 @@ section:first-child, section:last-child {
     margin-bottom: 30px;
 }
 
+#contact-us .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 320px;
+    max-width: 479px;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
     width: 100%;
     margin-bottom: 10px;
     font-size: 14px;
@@ -147,9 +154,9 @@ form {
 .data {
     display: flex;
     flex-direction: column;
-    min-width: 280px;
-    max-width: 320px;
     width: 80%;
+    min-width: 280px;
+    max-width: 340px;
     margin-bottom: 50px;
 }
 
@@ -176,9 +183,9 @@ form textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 280px;
-    max-width: 320px;
     width: 80%;
+    min-width: 280px;
+    max-width: 340px;
     padding: 0;
     background-color: #AACE9B;
     border: none;
@@ -194,19 +201,17 @@ form textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    padding: 0 20px 25px;
+    padding-bottom: 25px;
 }
 
 #contact-us address div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 240px;
-    max-width: 320px;
     width: 80%;
+    min-width: 280px;
+    max-width: 360px;
     margin-bottom: 80px;
-    font-size: 80%;
 }
 
 #contact-us address div:last-of-type {
@@ -214,13 +219,18 @@ form textarea {
 }
 
 #contact-us address img {
-    width: 25%;
+    width: 20%;
     max-width: 80px;
-    margin-right: 10px;
 }
 
 #contact-us address div p, #contact-us address div ul {
-    width: 75%;
+    width: 80%;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+#contact-us .inline {
+    display: inline-block;
 }
 
 .pbs {
@@ -255,6 +265,7 @@ form textarea {
 }
 
 @media screen and (min-width: 480px) {
+
     #home h1 {
         margin-bottom: 0;
     }
@@ -317,6 +328,89 @@ form textarea {
         order: 0;
         margin-bottom: 90px;
     }
+
+    #contact-us {
+        padding: 25px 15px;
+    }
+
+    #contact-us .container {
+        flex-direction: row;
+        justify-content: space-between;
+        min-width: 480px;
+        max-width: 767px;
+    }
+
+    #contact-us form {
+        flex-basis: 50%;
+        align-items: flex-end;
+    }
+
+    #contact-us address {
+        flex-basis: 50%;
+        margin-left: 3%;
+    }
+
+    .data {
+        min-width: 220px;
+        width: 90%;
+    }
+
+    #submit {
+        width: 90%;
+        min-width: 220px;
+    }
+
+    #contact-us address div {
+        width: 90%;
+        min-width: 225px;
+    }
+
+    #contact-us address img {
+        width: 20%;
+        max-width: 100px;
+    }
+    
+    #contact-us address div p, #contact-us address div ul {
+        width: 80%;
+    }
+
+    .pbs {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 95%;
+        margin-top: 100px;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .pbs div {
+        width: auto;
+    }
+
+    .pbs div:nth-child(2) {
+        margin: 0;
+    }
+
+    .pbs h4 {
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .pbs ol {
+        padding-left: 18px;
+        font-size: 100%;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    
+
+
+
+
+
 
 
 
