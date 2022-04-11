@@ -40,7 +40,6 @@ section:first-child, section:last-child {
 }
 
 #im-trackgenix img {
-    order: 1;
     width: 100%;
     max-width: 300px;
 }
@@ -96,13 +95,18 @@ section:first-child, section:last-child {
     padding: 16px 25px 36px;
 }
 
-#about-us > * {
+#about-us .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#about-us h3, #about-us p, #about-us img {
     margin-bottom: 90px;
 }
 
 #about-us .body {
     font-size: 18px;
-    font-weight: 21px;
+    line-height: 21px;
 }
 
 #about-us p:last-child {
@@ -113,7 +117,7 @@ section:first-child, section:last-child {
     width: 100%;
 }
 
-#about-us img:last-of-type {
+#about-us .container img:last-of-type {
     order: 1;
     margin: 0;
 }
@@ -239,6 +243,65 @@ form textarea {
     list-style-type: decimal;
 }
 
-@media only screen and (min-width: 768px) {
-    
+@media screen and (min-width: 768px) {
+    #home h1 {
+        margin-bottom: 0;
+    }
+
+    #home img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #im-trackgenix {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #im-trackgenix .container, #im-trackgenix img {
+        flex-basis: 50%;
+    } 
+
+    #im-trackgenix .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #what-can-i-do .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .can-do {
+        flex-basis: 40%;
+    }
+
+    #about-us .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #about-us .container p {
+        flex-basis: 50%;
+    }
+
+    #about-us .container img {
+        flex-basis: 45%;
+        width: 5%;
+        height: auto;
+    }
+
+    #about-us .container img:last-of-type {
+        order: 0;
+        margin-bottom: 90px;
+    }
+
+
+
+
+
+
 }

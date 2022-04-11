@@ -18,7 +18,6 @@ We created the index.html file and gave structure to the landing page of the web
 We added styles to the elements created in the previous week.
 ### week 04
 Following the Mobile Design First concept and using CSS flexbox we made the responsive design for three primary devices: Mobile (480px), Tablet (768px) and Desktop (1028px).
-Start using Trackgenix right now in your favourite device!
-Link: https://julian-cano.github.io/BaSP-M2022-Etapa-1/semana-04/
+To start using Trackgenix right now in your favourite device click [here](https://julian-cano.github.io/BaSP-M2022-Etapa-1/semana-04/)!
 
 _By Julián Cano_
