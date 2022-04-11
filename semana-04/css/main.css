@@ -66,11 +66,12 @@ section:first-child, section:last-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 50px 90px 0;
+    margin-bottom: 90px;
 }
 
 .can-do img {
-    width: 100px;
+    width: 30%;
+    max-width: 100px;
     margin-right: 5px;
 }
 
@@ -88,6 +89,7 @@ section:first-child, section:last-child {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 70%;
     min-height: 122px;
 }
 
@@ -136,7 +138,6 @@ form {
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    padding: 0 75px;
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 16px;
@@ -146,9 +147,10 @@ form {
 .data {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: 280px;
+    max-width: 320px;
+    width: 80%;
     margin-bottom: 50px;
-    
 }
 
 form label {
@@ -174,7 +176,9 @@ form textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    min-width: 280px;
+    max-width: 320px;
+    width: 80%;
     padding: 0;
     background-color: #AACE9B;
     border: none;
@@ -190,6 +194,7 @@ form textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     padding: 0 20px 25px;
 }
 
@@ -197,19 +202,25 @@ form textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 400px;
+    min-width: 240px;
+    max-width: 320px;
+    width: 80%;
     margin-bottom: 80px;
-}
-
-#contact-us address img {
-    width: 80px;
-    height: 80px;
-    margin-right: 15px;
+    font-size: 80%;
 }
 
 #contact-us address div:last-of-type {
     margin: 0;
+}
+
+#contact-us address img {
+    width: 25%;
+    max-width: 80px;
+    margin-right: 10px;
+}
+
+#contact-us address div p, #contact-us address div ul {
+    width: 75%;
 }
 
 .pbs {
@@ -243,7 +254,7 @@ form textarea {
     list-style-type: decimal;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
     #home h1 {
         margin-bottom: 0;
     }
@@ -258,13 +269,21 @@ form textarea {
         justify-content: space-around;
     }
 
-    #im-trackgenix .container, #im-trackgenix img {
-        flex-basis: 50%;
+    #im-trackgenix .container {
+        flex-basis: 70%;
     } 
 
     #im-trackgenix .container {
         display: flex;
         flex-direction: column;
+        margin-right: 5%;
+    }
+
+    #im-trackgenix img {
+        flex-basis: 50%;
+        width: 100%;
+        min-width: 120px;
+        max-width: 430px;
     }
 
     #what-can-i-do .container {
@@ -274,23 +293,23 @@ form textarea {
     }
 
     .can-do {
-        flex-basis: 40%;
+        flex-basis: 45%;
     }
 
     #about-us .container {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     }
 
     #about-us .container p {
-        flex-basis: 50%;
+        flex-basis: 55%;
     }
 
     #about-us .container img {
-        flex-basis: 45%;
-        width: 5%;
+        flex-basis: 43%;
+        width: 10%;
         height: auto;
     }
 
