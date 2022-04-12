@@ -229,10 +229,6 @@ form textarea {
     box-sizing: border-box;
 }
 
-#contact-us .inline {
-    display: inline-block;
-}
-
 .pbs {
     display: flex;
     flex-direction: column;
@@ -409,14 +405,23 @@ form textarea {
         margin-left: 30%;
     }
 
+}
 
+@media screen and (min-width: 1024px) {
 
+    main {
+        margin-left: 310px;
+    }
 
+    .pbs h4 {
+        font-size: 30px;
+        line-height: 36px;
+    }
 
-
-
-
-
-
+    .pbs ol {
+        padding-left: 23px;
+        font-size: 20px;
+        line-height: 23px;
+    }
 
 }
