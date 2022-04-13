@@ -10,7 +10,7 @@ header {
     height: 90px;
 }
 
-.nav-bar {
+.burger-button {
     width: 25px;
     height: 25px;
     margin-left: 62px;
@@ -24,18 +24,22 @@ header {
 }
 
 .sign-up {
+    box-sizing: border-box;
     padding: 10px 13px;
     margin-right: 28px;
     background-color: #AACE9B;
     border: none;
     border-radius: 5px;
     color: #373867;
+    font-size: 12px;
+    line-height: 14px;
     font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
 
-    .nav-bar {
+    .burger-button {
         visibility: hidden;
     }
+    
 }

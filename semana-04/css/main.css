@@ -48,7 +48,7 @@ section:first-child, section:last-child {
     margin-bottom: 40px;
 }
 
-#im-trackgenix .title {
+#im-trackgenix .heading-2 {
     color: rgba(55, 56, 103, 0.7);
     font-size: 30px;
     line-height: 35px;
@@ -62,30 +62,30 @@ section:first-child, section:last-child {
     margin-bottom: 40px;
 }
 
-.can-do {
+.i-can-do-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 90px;
 }
 
-.can-do img {
+.i-can-do-box img {
     width: 30%;
     max-width: 100px;
     margin-right: 5px;
 }
 
-.can-do .title {
+.i-can-do-box .heading-2 {
     font-size: 22px;
     line-height: 26px;
 }
 
-.can-do .body {
+.i-can-do-box .content-text-2 {
     font-size: 18px;
     font-weight: 21px;
 }
 
-.can-do-text {
+.i-can-do-text {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -106,7 +106,7 @@ section:first-child, section:last-child {
     margin-bottom: 90px;
 }
 
-#about-us .body {
+#about-us .content-text-2 {
     font-size: 18px;
     line-height: 21px;
 }
@@ -299,7 +299,7 @@ form textarea {
         justify-content: space-around;
     }
 
-    .can-do {
+    .i-can-do-box {
         flex-basis: 45%;
     }
 

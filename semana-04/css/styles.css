@@ -14,67 +14,38 @@ h2, h3 {
     text-align: center;
 }
 
-.border-box {
-    box-sizing: border-box;
-}
-
-.img {
+.img-proportion {
     height: auto;
 }
 
-.header, .title, .sub-header, .component-body, .secondary-body, .button, .large-body, .body, .small-body {
+.heading-1, .heading-2, .content-text-1 .content-text-2 {
     font-style: normal;
 }
 
-.header, .title, .button {
+.heading-1, .heading-2 {
     font-weight: 700;
 }
 
-.sub-header, .secondary-body, .large-body, .body, .small-body {
+.content-text-1, .content-text-2 {
     font-weight: 400;
 }
 
-.header {
+.heading-1 {
     font-size: 40px;
     line-height: 47px;
 }
 
-.title {
+.heading-2 {
     font-size: 14px;
     line-height: 16px;
 }
 
-.sub-header {
+.content-text-1 {
     font-size: 20px;
     line-height: 23px;
 }
 
-.component-body {
-    font-size: 14px;
-    line-height: 16px;
-}
-
-.secondary-body {
-    font-size: 12px;
-    line-height: 14px;
-}
-
-.button {
-    font-size: 15px;
-    line-height: 18px;
-}
-
-.large-body {
-    font-size: 20px;
-    line-height: 30px;
-}
-
-.body {
+.content-text-2 {
     font-size: 15px;
     line-height: 24px;
-}
-
-.small-body {
-    font-size: 12px;
-    line-height: 18px;
 }
