@@ -1,0 +1,45 @@
+header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    background-color: #373867;
+    width: 100%;
+    height: 90px;
+}
+
+.burger-button {
+    width: 25px;
+    height: 25px;
+    margin-left: 62px;
+    border: none;
+    background-color: #373867;
+}
+
+.header-logo {
+    width: 45px;
+    height: 61px;
+}
+
+.sign-up {
+    box-sizing: border-box;
+    padding: 10px 13px;
+    margin-right: 28px;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 5px;
+    color: #373867;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+
+    .burger-button {
+        visibility: hidden;
+    }
+    
+}

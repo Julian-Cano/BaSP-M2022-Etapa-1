@@ -21,5 +21,7 @@ Following the Mobile Design First concept and using CSS flexbox we made the resp
 To start using Trackgenix right now in your favourite device click [here](https://julian-cano.github.io/BaSP-M2022-Etapa-1/semana-04/)!
 ### Week 05
 This week we learned the JavaScript basics and started by solving simple exercises. You can see the exercises and their solutions via the inspect console [here](https://julian-cano.github.io/BaSP-M2022-Etapa-1/semana-05/).
+### Week 06
+It is time to give our little Trackgenix some core functionalities! We created a Sign-up and a Log-in pages that can be accesed through the home page. Visit [our new landing page](https://julian-cano.github.io/BaSP-M2022-Etapa-1/semana-06/) and sign up as an employee member (or log in if you have an existing account) on our system.
 
 _By Julián Cano_

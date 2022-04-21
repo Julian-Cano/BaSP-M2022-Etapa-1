@@ -1,0 +1,51 @@
+body {
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #373867;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #373867;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.img-proportion {
+    height: auto;
+}
+
+.heading-1, .heading-2, .content-text-1 .content-text-2 {
+    font-style: normal;
+}
+
+.heading-1, .heading-2 {
+    font-weight: 700;
+}
+
+.content-text-1, .content-text-2 {
+    font-weight: 400;
+}
+
+.heading-1 {
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.heading-2 {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.content-text-1 {
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.content-text-2 {
+    font-size: 15px;
+    line-height: 24px;
+}
