@@ -21,6 +21,7 @@ header {
 .header-logo {
     width: 45px;
     height: 61px;
+    margin: 0 30px;
 }
 
 .sign-up {
