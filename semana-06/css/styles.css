@@ -49,3 +49,17 @@ h2, h3 {
     font-size: 15px;
     line-height: 24px;
 }
+
+.error {
+    margin-top: 5px;
+    color: #F13312;
+    font-weight: 700;
+}
+
+.error-form {
+    border: 2px solid #F13312;
+}
+
+.succes-form {
+    border: 2px solid #49A37B;
+}
