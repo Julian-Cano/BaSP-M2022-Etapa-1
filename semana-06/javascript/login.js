@@ -12,14 +12,6 @@ window.onload = function() {
 	inputError.style.visibility = 'hidden';
 	// Inserted error field
 	formData.insertBefore(inputError, null);
-/*     email.addEventListener('input',emailValue);
-    function emailValue(e) {
-        console.log(e.target.value);
-    } */
-/* 	var formData = document.querySelectorAll('.form-data input[type="email"]');
-	console.log(formData);
-	var formData = email.parentElement;
-	console.log(formData); */
 
 	function emailCheck(e){
 		if (!emailRegex.test(e.target.value)) {
