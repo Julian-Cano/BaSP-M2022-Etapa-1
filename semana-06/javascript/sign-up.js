@@ -2,17 +2,17 @@ window.onload = function() {
     // Called input array
     var inputFields = document.querySelectorAll('input:not([type="submit"])');
 	// Named every input element
-	var firstName = inputFields[0];
-	var lastName = inputFields[1];
-	var idNumber = inputFields[2];
-	var birthDate = inputFields[3];
-	var phoneNumber = inputFields[4];
-	var homeAddres = inputFields[5];
-	var city = inputFields[6];
-	var postalCode = inputFields[7];
-	var email = inputFields[8];
-	var password = inputFields[9];
-	var passwordRpt = inputFields[10];
+	var firstNameInput = inputFields[0];
+	var lastNameInput = inputFields[1];
+	var idNumberInput = inputFields[2];
+	var birthDateInput = inputFields[3];
+	var phoneNumberInput = inputFields[4];
+	var homeAddressInput = inputFields[5];
+	var cityInput = inputFields[6];
+	var postalCodeInput = inputFields[7];
+	var emailInput = inputFields[8];
+	var passwordInput = inputFields[9];
+	var passwordRptInput = inputFields[10];
 	// Called .form-data array
 	var formData = document.querySelectorAll('.form-data');
 	// Create inputErrors with their text for each .form-data
@@ -20,7 +20,7 @@ window.onload = function() {
 	var inputErrorsText = [];
 	for (var i=0; i<formData.length; i++) {
 		inputErrors[i] = document.createElement('p');
-		inputErrorsText[i] = document.createTextNode('Incorrect. Insert a valid input.');
+		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid input.');
 		inputErrors[i].appendChild(inputErrorsText[i]);
 		inputErrors[i].classList.add('error', 'content-text-2');
 		inputErrors[i].style.visibility = 'hidden';
@@ -32,7 +32,7 @@ window.onload = function() {
 	var idNumberError = inputErrors[2];
 	var birthDateError = inputErrors[3];
 	var phoneNumberError = inputErrors[4];
-	var homeAddresError = inputErrors[5];
+	var homeAddressError = inputErrors[5];
 	var cityError = inputErrors[6];
 	var postalCodeError = inputErrors[7];
 	var emailError = inputErrors[8];
@@ -47,7 +47,27 @@ window.onload = function() {
 		})
 	});
 	// Every input validations
-	function onlyLetters(string) {
+	// First name blur validation
+	firstNameInput.addEventListener('blur', firstNameBlur);
+	function firstNameBlur(e) {
+		if (firstNameCheck(e)) {
+			firstNameError.style.visibility = 'hidden';
+			firstNameInput.classList.add('succes-form');
+			firstNameInput.classList.replace('error-form', 'succes-form');
+		} else {
+			firstNameError.style.visibility = 'visible';
+			firstNameInput.classList.add('error-form');
+			firstNameInput.classList.replace('succes-form', 'error-form');
+		}
+	}
+	function firstNameCheck () {
+		if (firstNameInput.value.length > 3 && letterOrSpc(firstNameInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function letterOrSpc(string) {
         for (var i = 0; i < string.length; i++) {
             var char = string.charAt(i).toLowerCase();
             if (!((char >= 'a' && char <= 'z') || char == ' ')) {
@@ -56,122 +76,111 @@ window.onload = function() {
         }
         return true;
     }
-	// First name blur validation
-	function firstNameCheck(e) {
-		if (e.target.value.length > 3 && onlyLetters(e.target.value)) {
-			firstNameError.style.visibility = 'hidden';
-			firstName.classList.add('succes-form');
-			firstName.classList.replace('error-form', 'succes-form');
+	// Last name blur validation
+	lastNameInput.addEventListener('blur', lastNameBlur);
+	function lastNameBlur(e) {
+		if (lastNameCheck (e)) {
+			lastNameError.style.visibility = 'hidden';
+			lastNameInput.classList.add('succes-form');
+			lastNameInput.classList.replace('error-form', 'succes-form');
 		} else {
-			firstNameError.style.visibility = 'visible';
-			firstName.classList.add('error-form');
-			firstName.classList.replace('succes-form', 'error-form');
+			lastNameError.style.visibility = 'visible';
+			lastNameInput.classList.add('error-form');
+			lastNameInput.classList.replace('succes-form', 'error-form');
 		}
 	}
-	firstName.addEventListener('blur', firstNameCheck);
-
-
-
-
-/* 	if (e.target.value.length > 3 && onlyLetters(e.target.value)) {
-		classListCorrect('name');
-	} else {
-		classListIncorrect('name');
-	} */
-
-
-/* 	function onlyLetters(string) {
-        for (var i = 0; i < string.length; i++) {
-            var c = string.charAt(i);
-            if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == ' ')) {
+	function lastNameCheck () {
+		if (lastNameInput.value.length > 3 && letterOrSpc(lastNameInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	// Id number blur validation
+	idNumberInput.addEventListener('blur', idNumberBlur);
+	function idNumberBlur(e) {
+		if (idNumberCheck(e)) {
+			idNumberError.style.visibility = 'hidden';
+			idNumberInput.classList.add('succes-form');
+			idNumberInput.classList.replace('error-form', 'succes-form');
+		} else {
+			idNumberError.style.visibility = 'visible';
+			idNumberInput.classList.add('error-form');
+			idNumberInput.classList.replace('succes-form', 'error-form');
+		}
+	}
+	function idNumberCheck() {
+		if (idNumberInput.value.length > 7 && numberVal(idNumberInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function numberVal(string) {
+		for (var i = 0; i < string.length; i++) {
+            var char = string.charAt(i);
+            if (!(char >= '0' && char <= '9') || char == '.' || char == ',') {
                 return false;
             }
         }
         return true;
-    } */
-
-	// Last name blur validation
-	lastName.addEventListener('blur', lastNameCheck);
-	function lastNameCheck(e) {
-		if (e.target.value.length > 3 && onlyLetters(e.target.value)) {
-			lastNameError.style.visibility = 'hidden';
-			lastName.classList.add('succes-form');
-			lastName.classList.replace('error-form', 'succes-form');
+	}
+	// Birth date blur validation
+	birthDateInput.addEventListener('blur', birthDateBlur);
+	function birthDateBlur(e) {
+		if (birthDateCheck(e)) {
+			birthDateError.style.visibility = 'hidden';
+			birthDateInput.classList.add('succes-form');
+			birthDateInput.classList.replace('error-form', 'succes-form');
 		} else {
-			lastNameError.style.visibility = 'visible';
-			lastName.classList.add('error-form');
-			lastName.classList.replace('succes-form', 'error-form');
+			birthDateError.style.visibility = 'visible';
+			birthDateInput.classList.add('error-form');
+			birthDateInput.classList.replace('succes-form', 'error-form');
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-	// Id number blur validation
-	idNumber.addEventListener('blur', idNumberCheck);
-	function idNumberCheck(e) {
-		
+	function birthDateCheck() {
+		if (new Date(birthDateInput.value).getTime() < new Date().getTime()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-	// Birth date blur validation
-	birthDate.addEventListener('blur', birthDateCheck);
-	function birthDateCheck(e) {
-		
-	}
-
-
-
-
-
-
-
-
-
-
-
-
 	// Phone number blur validation
-	phoneNumber.addEventListener('blur', phoneNumberCheck);
-	function phoneNumberCheck(e) {
-		
+	phoneNumberInput.addEventListener('blur', phoneNumberBlur);
+	function phoneNumberBlur(e) {
+		if (phoneNumberCheck(e)) {
+			phoneNumberError.style.visibility = 'hidden';
+			phoneNumberInput.classList.add('succes-form');
+			phoneNumberInput.classList.replace('error-form', 'succes-form');
+		} else {
+			phoneNumberError.style.visibility = 'visible';
+			phoneNumberInput.classList.add('error-form');
+			phoneNumberInput.classList.replace('succes-form', 'error-form');
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	function phoneNumberCheck () {
+		if (phoneNumberInput.value.length === 10 && numberVal(phoneNumberInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	// Home addres blur validation
-	homeAddres.addEventListener('blur', homeAddresCheck);
-	function homeAddresCheck(e) {
-		
+/* 	homeAddressInput.addEventListener('blur', homeAddressBlur);
+	function homeAddressBlur(e) {
+		if (homeAddressCheck(e)) {
+			homeAddressError.style.visibility = 'hidden';
+			homeAddressInput.classList.add('succes-form');
+			homeAddressInput.classList.replace('error-form', 'succes-form');
+		} else {
+			homeAddressError.style.visibility = 'visible';
+			homeAddressInput.classList.add('error-form');
+			homeAddressInput.classList.replace('succes-form', 'error-form');
+		}
 	}
+	function phoneNumberCheck () {
+		
+	} */
 
 
 
@@ -188,10 +197,21 @@ window.onload = function() {
 
 
 	// City blur validation
-	city.addEventListener('blur', cityCheck);
-	function cityCheck(e) {
-		
+/* 	cityInput.addEventListener('blur', cityBlur);
+	function cityBlur(e) {
+		if (cityCheck(e)) {
+			cityError.style.visibility = 'hidden';
+			cityInput.classList.add('succes-form');
+			cityInput.classList.replace('error-form', 'succes-form');
+		} else {
+			cityError.style.visibility = 'visible';
+			cityInput.classList.add('error-form');
+			cityInput.classList.replace('succes-form', 'error-form');
+		}
 	}
+	function cityCheck () {
+		
+	} */
 
 
 
@@ -205,61 +225,94 @@ window.onload = function() {
 
 
 	// Postal code blur validation
-	postalCode.addEventListener('blur', postalCodeCheck);
-	function postalCodeCheck(e) {
-		
+	postalCodeInput.addEventListener('blur', postalCodeBlur);
+	function postalCodeBlur(e) {
+		if (postalCodeCheck(e)) {
+			postalCodeError.style.visibility = 'hidden';
+			postalCodeInput.classList.add('succes-form');
+			postalCodeInput.classList.replace('error-form', 'succes-form');
+		} else {
+			postalCodeError.style.visibility = 'visible';
+			postalCodeInput.classList.add('error-form');
+			postalCodeInput.classList.replace('succes-form', 'error-form');
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	function postalCodeCheck () {
+		if ((postalCodeInput.value.length >= 4 && postalCodeInput.value.length <= 5) && numberVal(postalCodeInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	// Email blur validation
-	email.addEventListener('blur', emailCheck);
+	emailInput.addEventListener('blur', emailBlur);
 	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-	function emailCheck(e) {
-		
+	function emailBlur(e) {
+		if (emailCheck(e)) {
+			emailError.style.visibility = 'hidden';
+			emailInput.classList.add('succes-form');
+			emailInput.classList.replace('error-form', 'succes-form');
+		} else {
+			emailError.style.visibility = 'visible';
+			emailInput.classList.add('error-form');
+			emailInput.classList.replace('succes-form', 'error-form');
+		}
 	}
-
-
-
-
-
-
-
-
-
-
+	function emailCheck () {
+		if (emailRegex.test(emailInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	// Password blur validation
-	password.addEventListener('blur', passwordCheck);
-	function passwordCheck(e) {
-		
+	passwordInput.addEventListener('blur', passwordBlur);
+	function passwordBlur(e) {
+		if (passwordCheck(e)) {
+			passwordError.style.visibility = 'hidden';
+			passwordInput.classList.add('succes-form');
+			passwordInput.classList.replace('error-form', 'succes-form');
+		} else {
+			passwordError.style.visibility = 'visible';
+			passwordInput.classList.add('error-form');
+			passwordInput.classList.replace('succes-form', 'error-form');
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	function passwordCheck () {
+		if (passwordInput.value.length > 7 && letterOrNbr(passwordInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function letterOrNbr(string) {
+        for (var i = 0; i < string.length; i++) {
+            var char = string.charAt(i).toLowerCase();
+            if (!((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9'))) {
+                return false;
+            }
+        }
+        return true;
+    }
 	// Repeat password blur validation
-	passwordRpt.addEventListener('blur', passwordRptCheck);
-	function passwordRptCheck(e) {
-		
+	passwordRptInput.addEventListener('blur', passwordRptBlur);
+	function passwordRptBlur(e) {
+		if (passwordRptCheck(e)) {
+			passwordRptError.style.visibility = 'hidden';
+			passwordRptInput.classList.add('succes-form');
+			passwordRptInput.classList.replace('error-form', 'succes-form');
+		} else {
+			passwordRptError.style.visibility = 'visible';
+			passwordRptInput.classList.add('error-form');
+			passwordRptInput.classList.replace('succes-form', 'error-form');
+		}
+	}
+	function passwordRptCheck () {
+		if (passwordRptInput.value === passwordInput.value && passwordRptInput.value !== '') {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 
