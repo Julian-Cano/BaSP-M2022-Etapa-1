@@ -1,11 +1,7 @@
 window.onload = function() {
-	// Called input array
     var inputFields = document.querySelectorAll('input:not([type="submit"])');
-	var email = inputFields[0];
-	var password = inputFields[1];
-	// Called .form-data array
 	var formData = document.querySelectorAll('.form-data');
-	// Create inputErrors with their text for each .form-data
+	var submitBtn = document.getElementById('submit');
 	var inputErrors = [];
 	var inputErrorsText = [];
 	for (var i=0; i<formData.length; i++) {
@@ -16,10 +12,11 @@ window.onload = function() {
 		inputErrors[i].style.visibility = 'hidden';
 		formData[i].insertBefore(inputErrors[i], null);
 	}
+	var email = inputFields[0];
+	var password = inputFields[1];
 	var emailError = inputErrors[0];
 	var passwordError = inputErrors[1];
 	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-	email.addEventListener('blur', emailCheck);
 	function emailCheck(e){
 		if (!emailRegex.test(e.target.value)) {
 			emailError.style.visibility = 'visible';
@@ -31,14 +28,6 @@ window.onload = function() {
 			emailError.style.visibility = 'hidden';
 		}
 	}
-	inputFields.forEach(function (input) {
-		input.addEventListener('focus', function () {
-			input.classList.remove('error-form', 'succes-form');
-			var errorMessage = input.parentElement.lastElementChild;
-			errorMessage.style.visibility = 'hidden';
-		})
-	});
-	password.addEventListener('blur', passwordCheck);
 	function passwordCheck(e){
 		if (e.target.value === null || e.target.value === undefined || e.target.value.length < 8) {
 			passwordError.style.visibility = 'visible';
@@ -50,8 +39,6 @@ window.onload = function() {
 			passwordError.style.visibility = 'hidden';
 		}
 	}
-	var submitBtn = document.getElementById('submit');
-	submitBtn.addEventListener('click', submitClick);
 	function submitClick(e){
 		e.preventDefault();
 		if (emailRegex.test(email.value) && (password.value !== null && password.value !== undefined &&
@@ -75,4 +62,14 @@ window.onload = function() {
 			alert('Email or pasword incorrect, please try again.');
 		}
 	}
+	email.addEventListener('blur', emailCheck);
+	password.addEventListener('blur', passwordCheck);
+	submitBtn.addEventListener('click', submitClick);
+	inputFields.forEach(function (input) {
+		input.addEventListener('focus', function () {
+			input.classList.remove('error-form', 'succes-form');
+			var errorMessage = input.parentElement.lastElementChild;
+			errorMessage.style.visibility = 'hidden';
+		})
+	});
 }
