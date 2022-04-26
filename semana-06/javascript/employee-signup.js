@@ -1,7 +1,17 @@
 window.onload = function() {
-    // Called input array
     var inputFields = document.querySelectorAll('input:not([type="submit"])');
-	// Named every input element
+	var formData = document.querySelectorAll('.form-data');
+	var submitBtn = document.getElementById('submit');
+	var inputErrors = [];
+	var inputErrorsText = [];
+	for (var i=0; i<formData.length; i++) {
+		inputErrors[i] = document.createElement('p');
+		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid input.');
+		inputErrors[i].appendChild(inputErrorsText[i]);
+		inputErrors[i].classList.add('error', 'content-text-2');
+		inputErrors[i].style.visibility = 'hidden';
+		formData[i].insertBefore(inputErrors[i], null);
+	}
 	var firstNameInput = inputFields[0];
 	var lastNameInput = inputFields[1];
 	var idNumberInput = inputFields[2];
@@ -13,51 +23,28 @@ window.onload = function() {
 	var emailInput = inputFields[8];
 	var passwordInput = inputFields[9];
 	var passwordRptInput = inputFields[10];
-	// Called .form-data array
-	var formData = document.querySelectorAll('.form-data');
-	// Create inputErrors with their text for each .form-data
-	var inputErrors = [];
-	var inputErrorsText = [];
-	for (var i=0; i<formData.length; i++) {
-		inputErrors[i] = document.createElement('p');
-		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid input.');
-		inputErrors[i].appendChild(inputErrorsText[i]);
-		inputErrors[i].classList.add('error', 'content-text-2');
-		inputErrors[i].style.visibility = 'hidden';
-		formData[i].insertBefore(inputErrors[i], null);
+	var index;
+	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+	function succes(index) {
+		for (var i = index; i == index; i++) {
+			inputErrors[i].style.visibility = 'hidden';
+			inputFields[i].classList.add('succes-form');
+			inputFields[i].classList.replace('error-form', 'succes-form');
+		}
 	}
-	// Named every error element
-	var firstNameError = inputErrors[0];
-	var lastNameError = inputErrors[1];
-	var idNumberError = inputErrors[2];
-	var birthDateError = inputErrors[3];
-	var phoneNumberError = inputErrors[4];
-	var homeAddressError = inputErrors[5];
-	var cityError = inputErrors[6];
-	var postalCodeError = inputErrors[7];
-	var emailError = inputErrors[8];
-	var passwordError = inputErrors[9];
-	var passwordRptError = inputErrors[10];
-	// Focus event for every input & repective error
-	inputFields.forEach(function (input) {
-		input.addEventListener('focus', function () {
-			input.classList.remove('error-form', 'succes-form');
-			var errorMessage = input.parentElement.lastElementChild;
-			errorMessage.style.visibility = 'hidden';
-		})
-	});
-	// Every input validations
-	// First name blur validation
-	firstNameInput.addEventListener('blur', firstNameBlur);
+	function error(i) {
+		for (var i = index; i == index; i++) {
+			inputErrors[i].style.visibility = 'visible';
+			inputFields[i].classList.add('error-form');
+			inputFields[i].classList.replace('succes-form', 'error-form');
+		}
+	}
 	function firstNameBlur(e) {
+		index = 0;
 		if (firstNameCheck(e)) {
-			firstNameError.style.visibility = 'hidden';
-			firstNameInput.classList.add('succes-form');
-			firstNameInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			firstNameError.style.visibility = 'visible';
-			firstNameInput.classList.add('error-form');
-			firstNameInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function firstNameCheck() {
@@ -68,25 +55,20 @@ window.onload = function() {
 		}
 	}
 	function letterOrSpc(string) {
-        for (var i = 0; i < string.length; i++) {
-            var char = string.charAt(i).toLowerCase();
-            if (!((char >= 'a' && char <= 'z') || char == ' ')) {
-                return false;
-            }
-        }
-        return true;
-    }
-	// Last name blur validation
-	lastNameInput.addEventListener('blur', lastNameBlur);
+		for (var i = 0; i < string.length; i++) {
+			var char = string.charAt(i).toLowerCase();
+			if (!((char >= 'a' && char <= 'z') || char == ' ')) {
+				return false;
+			}
+		}
+		return true;
+	}
 	function lastNameBlur(e) {
+		index = 1;
 		if (lastNameCheck(e)) {
-			lastNameError.style.visibility = 'hidden';
-			lastNameInput.classList.add('succes-form');
-			lastNameInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			lastNameError.style.visibility = 'visible';
-			lastNameInput.classList.add('error-form');
-			lastNameInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function lastNameCheck() {
@@ -96,17 +78,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Id number blur validation
-	idNumberInput.addEventListener('blur', idNumberBlur);
 	function idNumberBlur(e) {
+		index = 2;
 		if (idNumberCheck(e)) {
-			idNumberError.style.visibility = 'hidden';
-			idNumberInput.classList.add('succes-form');
-			idNumberInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			idNumberError.style.visibility = 'visible';
-			idNumberInput.classList.add('error-form');
-			idNumberInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function idNumberCheck() {
@@ -116,17 +93,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Birth date blur validation
-	birthDateInput.addEventListener('blur', birthDateBlur);
 	function birthDateBlur(e) {
+		index = 3;
 		if (birthDateCheck(e)) {
-			birthDateError.style.visibility = 'hidden';
-			birthDateInput.classList.add('succes-form');
-			birthDateInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			birthDateError.style.visibility = 'visible';
-			birthDateInput.classList.add('error-form');
-			birthDateInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function birthDateCheck() {
@@ -136,17 +108,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Phone number blur validation
-	phoneNumberInput.addEventListener('blur', phoneNumberBlur);
 	function phoneNumberBlur(e) {
+		index = 4;
 		if (phoneNumberCheck(e)) {
-			phoneNumberError.style.visibility = 'hidden';
-			phoneNumberInput.classList.add('succes-form');
-			phoneNumberInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			phoneNumberError.style.visibility = 'visible';
-			phoneNumberInput.classList.add('error-form');
-			phoneNumberInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function phoneNumberCheck() {
@@ -156,17 +123,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Home addres blur validation
-	homeAddressInput.addEventListener('blur', homeAddressBlur);
 	function homeAddressBlur(e) {
+		index = 5;
 		if (homeAddressCheck(e)) {
-			homeAddressError.style.visibility = 'hidden';
-			homeAddressInput.classList.add('succes-form');
-			homeAddressInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			homeAddressError.style.visibility = 'visible';
-			homeAddressInput.classList.add('error-form');
-			homeAddressInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function homeAddressCheck() {
@@ -191,31 +153,46 @@ window.onload = function() {
 	}
 	function ifLetter(string) {
 		for (var i = 0; i < string.length; i++) {
-            var char = string.charAt(i).toLowerCase();
-            if (!(char >= 'a' && char <= 'z')) {
-                return false;
-            }
-        }
-        return true;
+			var char = string.charAt(i).toLowerCase();
+			if (!(char >= 'a' && char <= 'z')) {
+				return false;
+			}
+		}
+		return true;
 	}
-	function letterOrSpc(string) {
-        for (var i = 0; i < string.length; i++) {
-            var char = string.charAt(i).toLowerCase();
-            if (!((char >= 'a' && char <= 'z') || char == ' ')) {
-                return false;
-            }
-        }
-        return true;
-    }
+	function numberVal(string) {
+		for (var i = 0; i < string.length; i++) {
+			var char = string.charAt(i);
+			if (!(char >= '0' && char <= '9') || char == '.' || char == ',') {
+				return false;
+			}
+		}
+		return true;
+	}
+	function cityBlur(e) {
+		index = 6;
+		if (cityCheck(e)) {
+			succes(index);
+		} else {
+			error(index);
+		}
+	}
+	function cityCheck() {
+		if (letterOrNbr(cityInput.value) && letterCounter(cityInput.value) > 3) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	function letterOrNbr(string) {
-        for (var i = 0; i < string.length; i++) {
-            var char = string.charAt(i).toLowerCase();
-            if (!((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9'))) {
-                return false;
-            }
-        }
-        return true;
-    }
+		for (var i = 0; i < string.length; i++) {
+			var char = string.charAt(i).toLowerCase();
+			if (!((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9'))) {
+				return false;
+			}
+		}
+		return true;
+	}
 	function letterCounter(string) {
 		var letterQ = 0;
 		for (var i = 0; i < string.length; i++) {
@@ -226,46 +203,12 @@ window.onload = function() {
 		}
 		return letterQ;
 	}
-	function numberVal(string) {
-		for (var i = 0; i < string.length; i++) {
-            var char = string.charAt(i);
-            if (!(char >= '0' && char <= '9') || char == '.' || char == ',') {
-                return false;
-            }
-        }
-        return true;
-	}
-	// City blur validation
-	cityInput.addEventListener('blur', cityBlur);
-	function cityBlur(e) {
-		if (cityCheck(e)) {
-			cityError.style.visibility = 'hidden';
-			cityInput.classList.add('succes-form');
-			cityInput.classList.replace('error-form', 'succes-form');
-		} else {
-			cityError.style.visibility = 'visible';
-			cityInput.classList.add('error-form');
-			cityInput.classList.replace('succes-form', 'error-form');
-		}
-	}
-	function cityCheck() {
-		if (letterOrNbr(cityInput.value) && letterCounter(cityInput.value) > 3) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	// Postal code blur validation
-	postalCodeInput.addEventListener('blur', postalCodeBlur);
 	function postalCodeBlur(e) {
+		index = 7;
 		if (postalCodeCheck(e)) {
-			postalCodeError.style.visibility = 'hidden';
-			postalCodeInput.classList.add('succes-form');
-			postalCodeInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			postalCodeError.style.visibility = 'visible';
-			postalCodeInput.classList.add('error-form');
-			postalCodeInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function postalCodeCheck() {
@@ -276,18 +219,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Email blur validation
-	emailInput.addEventListener('blur', emailBlur);
-	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 	function emailBlur(e) {
+		index = 8;
 		if (emailCheck(e)) {
-			emailError.style.visibility = 'hidden';
-			emailInput.classList.add('succes-form');
-			emailInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			emailError.style.visibility = 'visible';
-			emailInput.classList.add('error-form');
-			emailInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function emailCheck() {
@@ -297,17 +234,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Password blur validation
-	passwordInput.addEventListener('blur', passwordBlur);
 	function passwordBlur(e) {
+		index = 9;
 		if (passwordCheck(e)) {
-			passwordError.style.visibility = 'hidden';
-			passwordInput.classList.add('succes-form');
-			passwordInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			passwordError.style.visibility = 'visible';
-			passwordInput.classList.add('error-form');
-			passwordInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function passwordCheck() {
@@ -317,17 +249,12 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Repeat password blur validation
-	passwordRptInput.addEventListener('blur', passwordRptBlur);
 	function passwordRptBlur(e) {
+		index = 10;
 		if (passwordRptCheck(e)) {
-			passwordRptError.style.visibility = 'hidden';
-			passwordRptInput.classList.add('succes-form');
-			passwordRptInput.classList.replace('error-form', 'succes-form');
+			succes(index);
 		} else {
-			passwordRptError.style.visibility = 'visible';
-			passwordRptInput.classList.add('error-form');
-			passwordRptInput.classList.replace('succes-form', 'error-form');
+			error(index);
 		}
 	}
 	function passwordRptCheck() {
@@ -337,9 +264,6 @@ window.onload = function() {
 			return false;
 		}
 	}
-	// Create button validation
-	var submitBtn = document.getElementById('submit');
-	submitBtn.addEventListener('click', submitClick);
 	function submitClick(e) {
 		e.preventDefault();
 		if (firstNameCheck(e) && lastNameCheck(e) && idNumberCheck(e) && birthDateCheck(e) && phoneNumberCheck(e) &&
@@ -368,20 +292,23 @@ window.onload = function() {
 			alert('Failed at submitting data, please check you inputs.');
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	firstNameInput.addEventListener('blur', firstNameBlur);
+	lastNameInput.addEventListener('blur', lastNameBlur);
+	idNumberInput.addEventListener('blur', idNumberBlur);
+	birthDateInput.addEventListener('blur', birthDateBlur);
+	phoneNumberInput.addEventListener('blur', phoneNumberBlur);
+	homeAddressInput.addEventListener('blur', homeAddressBlur);
+	cityInput.addEventListener('blur', cityBlur);
+	postalCodeInput.addEventListener('blur', postalCodeBlur);
+	emailInput.addEventListener('blur', emailBlur);
+	passwordInput.addEventListener('blur', passwordBlur);
+	passwordRptInput.addEventListener('blur', passwordRptBlur);
+	submitBtn.addEventListener('click', submitClick);
+	inputFields.forEach(function (input) {
+		input.addEventListener('focus', function () {
+			input.classList.remove('error-form', 'succes-form');
+			var errorMessage = input.parentElement.lastElementChild;
+			errorMessage.style.visibility = 'hidden';
+		})
+	});
 }
