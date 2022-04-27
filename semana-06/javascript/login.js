@@ -1,14 +1,14 @@
-window.onload = function() {
+window.onload = function () {
 	var labels = document.querySelectorAll('label');
-    var inputFields = document.querySelectorAll('input:not([type="submit"])');
+	var inputFields = document.querySelectorAll('input:not([type="submit"])');
 	var formData = document.querySelectorAll('.form-data');
 	var submitBtn = document.getElementById('submit');
 	var inputErrors = [];
 	var inputErrorsText = [];
 	for (var i = 0; i < formData.length; i++) {
 		inputErrors[i] = document.createElement('p');
-		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid ' +
-		labels[i].textContent.toLocaleLowerCase() + '.');
+		inputErrorsText[i] = document.createTextNode('Incorrect. Insert a valid ' +
+			labels[i].textContent.toLowerCase() + '.');
 		inputErrors[i].appendChild(inputErrorsText[i]);
 		inputErrors[i].classList.add('error', 'content-text-2');
 		inputErrors[i].style.visibility = 'hidden';
@@ -20,20 +20,16 @@ window.onload = function() {
 	var validAll = [
 		emailCheck,
 		passwordCheck,
-	]
+	];
 	function succes(index) {
-		for (var i = index; i == index; i++) {
-			inputErrors[i].style.visibility = 'hidden';
-			inputFields[i].classList.add('succes-form');
-			inputFields[i].classList.replace('error-form', 'succes-form');
-		}
+		inputErrors[index].style.visibility = 'hidden';
+		inputFields[index].classList.add('succes-form');
+		inputFields[index].classList.replace('error-form', 'succes-form');
 	}
 	function error(index) {
-		for (var i = index; i == index; i++) {
-			inputErrors[i].style.visibility = 'visible';
-			inputFields[i].classList.add('error-form');
-			inputFields[i].classList.replace('succes-form', 'error-form');
-		}
+		inputErrors[index].style.visibility = 'visible';
+		inputFields[index].classList.add('error-form');
+		inputFields[index].classList.replace('succes-form', 'error-form');
 	}
 	function emailBlur(e) {
 		index = 0;
@@ -94,11 +90,11 @@ window.onload = function() {
 	emailInput.addEventListener('blur', emailBlur);
 	passwordInput.addEventListener('blur', passwordBlur);
 	submitBtn.addEventListener('click', submitClick);
-	inputFields.forEach(function(input) {
-		input.addEventListener('focus', function() {
+	inputFields.forEach(function (input) {
+		input.addEventListener('focus', function () {
 			input.classList.remove('error-form', 'succes-form');
 			var errorMessage = input.parentElement.lastElementChild;
 			errorMessage.style.visibility = 'hidden';
 		})
-	});
+	})
 }

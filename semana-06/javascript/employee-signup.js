@@ -1,6 +1,6 @@
-window.onload = function() {
+window.onload = function () {
 	var labels = document.querySelectorAll('label');
-    var inputFields = document.querySelectorAll('input:not([type="submit"])');
+	var inputFields = document.querySelectorAll('input:not([type="submit"])');
 	var formData = document.querySelectorAll('.form-data');
 	var submitBtn = document.getElementById('submit');
 	var inputErrors = [];
@@ -8,7 +8,7 @@ window.onload = function() {
 	for (var i = 0; i < formData.length; i++) {
 		inputErrors[i] = document.createElement('p');
 		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid ' +
-		labels[i].textContent.toLocaleLowerCase() + '.');
+			labels[i].textContent.toLowerCase() + '.');
 		inputErrors[i].appendChild(inputErrorsText[i]);
 		inputErrors[i].classList.add('error', 'content-text-2');
 		inputErrors[i].style.visibility = 'hidden';
@@ -39,20 +39,16 @@ window.onload = function() {
 		emailCheck,
 		passwordCheck,
 		passwordRptCheck
-	]
+	];
 	function succes(index) {
-		for (var i = index; i == index; i++) {
-			inputErrors[i].style.visibility = 'hidden';
-			inputFields[i].classList.add('succes-form');
-			inputFields[i].classList.replace('error-form', 'succes-form');
-		}
+		inputErrors[index].style.visibility = 'hidden';
+		inputFields[index].classList.add('succes-form');
+		inputFields[index].classList.replace('error-form', 'succes-form');
 	}
 	function error(index) {
-		for (var i = index; i == index; i++) {
-			inputErrors[i].style.visibility = 'visible';
-			inputFields[i].classList.add('error-form');
-			inputFields[i].classList.replace('succes-form', 'error-form');
-		}
+		inputErrors[index].style.visibility = 'visible';
+		inputFields[index].classList.add('error-form');
+		inputFields[index].classList.replace('succes-form', 'error-form');
 	}
 	function firstNameBlur(e) {
 		index = 0;
@@ -155,11 +151,11 @@ window.onload = function() {
 	}
 	function stringWithSpace(string) {
 		var spcIndex = string.indexOf(' ');
-		if (spcIndex === null || spcIndex === undefined || spcIndex <= 0 || spcIndex+1 == string.length) {
+		if (spcIndex === null || spcIndex === undefined || spcIndex <= 0 || spcIndex + 1 == string.length) {
 			return false;
 		}
-		var letterBfrSpc = string.substring(0,spcIndex);
-		var nbrAfterSpc = string.substring(spcIndex+1);
+		var letterBfrSpc = string.substring(0, spcIndex);
+		var nbrAfterSpc = string.substring(spcIndex + 1);
 		if (ifLetter(letterBfrSpc) && numberVal(nbrAfterSpc)) {
 			return true;
 		} else {
@@ -227,8 +223,8 @@ window.onload = function() {
 		}
 	}
 	function postalCodeCheck() {
-		if ((postalCodeInput.value.length >= 4 && postalCodeInput.value.length <= 5)
-		&& numberVal(postalCodeInput.value)) {
+		if ((postalCodeInput.value.length >= 4 && postalCodeInput.value.length <= 5) &&
+			numberVal(postalCodeInput.value)) {
 			return true;
 		} else {
 			return false;
@@ -292,25 +288,14 @@ window.onload = function() {
 		}
 		if (validCount === validAll.length) {
 			alert('User succesfully created!\nFirst name: ' + firstNameInput.value + '\nLast name: ' +
-			lastNameInput.value + '\nId number: ' + idNumberInput.value + '\nData of birth: ' + birthDateInput.value
-			+ '\nPhone number: ' + phoneNumberInput.value + '\nAddress: ' + homeAddressInput.value + '\nCity: ' +
-			cityInput.value + '\nPostal code: ' + postalCodeInput.value + '\nEmail: ' + emailInput.value +
-			'\nPassword: ' + passwordInput.value);
+				lastNameInput.value + '\nId number: ' + idNumberInput.value + '\nDate of birth: ' +
+				birthDateInput.value + '\nPhone number: ' + phoneNumberInput.value + '\nAddress: ' +
+				homeAddressInput.value + '\nCity: ' + cityInput.value + '\nPostal code: ' + postalCodeInput.value +
+				'\nEmail: ' + emailInput.value + '\nPassword: ' + passwordInput.value);
 		} else {
 			alert('Failed at submitting data, please check your inputs.');
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
 	firstNameInput.addEventListener('blur', firstNameBlur);
 	lastNameInput.addEventListener('blur', lastNameBlur);
 	idNumberInput.addEventListener('blur', idNumberBlur);
@@ -329,5 +314,5 @@ window.onload = function() {
 			var errorMessage = input.parentElement.lastElementChild;
 			errorMessage.style.visibility = 'hidden';
 		})
-	});
+	})
 }
