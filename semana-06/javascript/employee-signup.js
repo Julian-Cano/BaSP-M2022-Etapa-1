@@ -1,12 +1,14 @@
 window.onload = function() {
+	var labels = document.querySelectorAll('label');
     var inputFields = document.querySelectorAll('input:not([type="submit"])');
 	var formData = document.querySelectorAll('.form-data');
 	var submitBtn = document.getElementById('submit');
 	var inputErrors = [];
 	var inputErrorsText = [];
-	for (var i=0; i<formData.length; i++) {
+	for (var i = 0; i < formData.length; i++) {
 		inputErrors[i] = document.createElement('p');
-		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid input.');
+		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid ' +
+		labels[i].textContent.toLocaleLowerCase() + '.');
 		inputErrors[i].appendChild(inputErrorsText[i]);
 		inputErrors[i].classList.add('error', 'content-text-2');
 		inputErrors[i].style.visibility = 'hidden';
@@ -25,6 +27,19 @@ window.onload = function() {
 	var passwordRptInput = inputFields[10];
 	var index;
 	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+	var validAll = [
+		firstNameCheck,
+		lastNameCheck,
+		idNumberCheck,
+		birthDateCheck,
+		phoneNumberCheck,
+		homeAddressCheck,
+		cityCheck,
+		postalCodeCheck,
+		emailCheck,
+		passwordCheck,
+		passwordRptCheck
+	]
 	function succes(index) {
 		for (var i = index; i == index; i++) {
 			inputErrors[i].style.visibility = 'hidden';
@@ -32,7 +47,7 @@ window.onload = function() {
 			inputFields[i].classList.replace('error-form', 'succes-form');
 		}
 	}
-	function error(i) {
+	function error(index) {
 		for (var i = index; i == index; i++) {
 			inputErrors[i].style.visibility = 'visible';
 			inputFields[i].classList.add('error-form');
@@ -266,32 +281,36 @@ window.onload = function() {
 	}
 	function submitClick(e) {
 		e.preventDefault();
-		if (firstNameCheck(e) && lastNameCheck(e) && idNumberCheck(e) && birthDateCheck(e) && phoneNumberCheck(e) &&
-		homeAddressCheck(e) && cityCheck(e) && postalCodeCheck(e) && emailCheck(e) && passwordCheck(e) &&
-		passwordRptCheck(e)) {
-			inputErrors.forEach(function (p) {
-				p.style.visibility = 'hidden';
-			})
-			inputFields.forEach(function (input) {
-				input.classList.add('succes-form');
-				input.classList.replace('error-form', 'succes-form');
-			})
+		var validCount = 0;
+		for (var i = 0; i < validAll.length; i++) {
+			if (validAll[i](e)) {
+				validCount++;
+				succes(i);
+			} else {
+				error(i);
+			}
+		}
+		if (validCount === validAll.length) {
 			alert('User succesfully created!\nFirst name: ' + firstNameInput.value + '\nLast name: ' +
 			lastNameInput.value + '\nId number: ' + idNumberInput.value + '\nData of birth: ' + birthDateInput.value
 			+ '\nPhone number: ' + phoneNumberInput.value + '\nAddress: ' + homeAddressInput.value + '\nCity: ' +
 			cityInput.value + '\nPostal code: ' + postalCodeInput.value + '\nEmail: ' + emailInput.value +
 			'\nPassword: ' + passwordInput.value);
 		} else {
-			inputErrors.forEach(function (p) {
-				p.style.visibility = 'visible';
-			})
-			inputFields.forEach(function (input) {
-				input.classList.add('error-form');
-				input.classList.replace('succes-form', 'error-form');
-			})
-			alert('Failed at submitting data, please check you inputs.');
+			alert('Failed at submitting data, please check your inputs.');
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
 	firstNameInput.addEventListener('blur', firstNameBlur);
 	lastNameInput.addEventListener('blur', lastNameBlur);
 	idNumberInput.addEventListener('blur', idNumberBlur);

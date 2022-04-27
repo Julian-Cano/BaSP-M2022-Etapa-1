@@ -1,72 +1,101 @@
 window.onload = function() {
+	var labels = document.querySelectorAll('label');
     var inputFields = document.querySelectorAll('input:not([type="submit"])');
 	var formData = document.querySelectorAll('.form-data');
 	var submitBtn = document.getElementById('submit');
 	var inputErrors = [];
 	var inputErrorsText = [];
-	for (var i=0; i<formData.length; i++) {
+	for (var i = 0; i < formData.length; i++) {
 		inputErrors[i] = document.createElement('p');
-		inputErrorsText[i] = document.createTextNode('Incorrect. Insert a valid input.');
+		inputErrorsText[i] = document.createTextNode('Invalid. Insert a valid ' +
+		labels[i].textContent.toLocaleLowerCase() + '.');
 		inputErrors[i].appendChild(inputErrorsText[i]);
 		inputErrors[i].classList.add('error', 'content-text-2');
 		inputErrors[i].style.visibility = 'hidden';
 		formData[i].insertBefore(inputErrors[i], null);
 	}
-	var email = inputFields[0];
-	var password = inputFields[1];
-	var emailError = inputErrors[0];
-	var passwordError = inputErrors[1];
+	var emailInput = inputFields[0];
+	var passwordInput = inputFields[1];
 	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-	function emailCheck(e){
-		if (!emailRegex.test(e.target.value)) {
-			emailError.style.visibility = 'visible';
-			email.classList.add('error-form');
-			email.classList.replace('succes-form', 'error-form');
-		} else {
-			email.classList.add('succes-form');
-			email.classList.replace('error-form', 'succes-form');
-			emailError.style.visibility = 'hidden';
+	var validAll = [
+		emailCheck,
+		passwordCheck,
+	]
+	function succes(index) {
+		for (var i = index; i == index; i++) {
+			inputErrors[i].style.visibility = 'hidden';
+			inputFields[i].classList.add('succes-form');
+			inputFields[i].classList.replace('error-form', 'succes-form');
 		}
 	}
-	function passwordCheck(e){
-		if (e.target.value === null || e.target.value === undefined || e.target.value.length < 8) {
-			passwordError.style.visibility = 'visible';
-			password.classList.add('error-form');
-			password.classList.replace('succes-form', 'error-form');
-		} else {
-			password.classList.add('succes-form');
-			password.classList.replace('error-form', 'succes-form');
-			passwordError.style.visibility = 'hidden';
+	function error(index) {
+		for (var i = index; i == index; i++) {
+			inputErrors[i].style.visibility = 'visible';
+			inputFields[i].classList.add('error-form');
+			inputFields[i].classList.replace('succes-form', 'error-form');
 		}
 	}
-	function submitClick(e){
+	function emailBlur(e) {
+		index = 0;
+		if (emailCheck(e)) {
+			succes(index);
+		} else {
+			error(index);
+		}
+	}
+	function emailCheck() {
+		if (emailRegex.test(emailInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function passwordBlur(e) {
+		index = 1;
+		if (passwordCheck(e)) {
+			succes(index);
+		} else {
+			error(index);
+		}
+	}
+	function passwordCheck() {
+		if (passwordInput.value.length > 7 && letterOrNbr(passwordInput.value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function letterOrNbr(string) {
+		for (var i = 0; i < string.length; i++) {
+			var char = string.charAt(i).toLowerCase();
+			if (!((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9'))) {
+				return false;
+			}
+		}
+		return true;
+	}
+	function submitClick(e) {
 		e.preventDefault();
-		if (emailRegex.test(email.value) && (password.value !== null && password.value !== undefined &&
-			password.value.length >= 8)) {
-			inputErrors.forEach(function (p) {
-				p.style.visibility = 'hidden';
-			})
-			inputFields.forEach(function (input) {
-				input.classList.add('succes-form');
-				input.classList.replace('error-form', 'succes-form');
-			})
+		var validCount = 0;
+		for (var i = 0; i < validAll.length; i++) {
+			if (validAll[i](e)) {
+				validCount++;
+				succes(i);
+			} else {
+				error(i);
+			}
+		}
+		if (validCount === validAll.length) {
 			alert('Login Succesful!\nEmail: ' + email.value + '\nPassword: ' + password.value);
 		} else {
-			inputErrors.forEach(function (p) {
-				p.style.visibility = 'visible';
-			})
-			inputFields.forEach(function (input) {
-				input.classList.add('error-form');
-				input.classList.replace('succes-form', 'error-form');
-			})
 			alert('Email or pasword incorrect, please try again.');
 		}
 	}
-	email.addEventListener('blur', emailCheck);
-	password.addEventListener('blur', passwordCheck);
+	emailInput.addEventListener('blur', emailBlur);
+	passwordInput.addEventListener('blur', passwordBlur);
 	submitBtn.addEventListener('click', submitClick);
-	inputFields.forEach(function (input) {
-		input.addEventListener('focus', function () {
+	inputFields.forEach(function(input) {
+		input.addEventListener('focus', function() {
 			input.classList.remove('error-form', 'succes-form');
 			var errorMessage = input.parentElement.lastElementChild;
 			errorMessage.style.visibility = 'hidden';
