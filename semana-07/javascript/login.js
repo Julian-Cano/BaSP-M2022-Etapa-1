@@ -21,20 +21,20 @@ window.onload = function () {
 		emailCheck,
 		passwordCheck,
 	];
-	function succes(index) {
+	function success(index) {
 		inputErrors[index].style.visibility = 'hidden';
-		inputFields[index].classList.add('succes-form');
-		inputFields[index].classList.replace('error-form', 'succes-form');
+		inputFields[index].classList.add('success-form');
+		inputFields[index].classList.replace('error-form', 'success-form');
 	}
 	function error(index) {
 		inputErrors[index].style.visibility = 'visible';
 		inputFields[index].classList.add('error-form');
-		inputFields[index].classList.replace('succes-form', 'error-form');
+		inputFields[index].classList.replace('success-form', 'error-form');
 	}
 	function emailBlur(e) {
 		index = 0;
 		if (emailCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -49,7 +49,7 @@ window.onload = function () {
 	function passwordBlur(e) {
 		index = 1;
 		if (passwordCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -76,15 +76,26 @@ window.onload = function () {
 		for (var i = 0; i < validAll.length; i++) {
 			if (validAll[i](e)) {
 				validCount++;
-				succes(i);
+				success(i);
 			} else {
 				error(i);
 			}
 		}
 		if (validCount === validAll.length) {
-			alert('Login Succesful!\nEmail: ' + email.value + '\nPassword: ' + password.value);
+			var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
+			var queryParams = '?email=' + email.value + '&password=' + password.value;
+			fetch(url+queryParams)
+			.then( (response) => response.json())
+			.then( (jsonRes) => {
+				if (jsonRes.success) {
+					alert(jsonRes.msg + '\nEmail: ' + emailInput.value + '\nPassword: ' + passwordInput.value)
+				} else {
+					alert(jsonRes.msg)
+				}
+			})
+			.catch( (error) => console.log(error))
 		} else {
-			alert('Email or pasword incorrect, please try again.');
+			alert('Email or pasword invalids, please check your inputs.');
 		}
 	}
 	emailInput.addEventListener('blur', emailBlur);
@@ -92,7 +103,7 @@ window.onload = function () {
 	submitBtn.addEventListener('click', submitClick);
 	inputFields.forEach(function (input) {
 		input.addEventListener('focus', function () {
-			input.classList.remove('error-form', 'succes-form');
+			input.classList.remove('error-form', 'success-form');
 			var errorMessage = input.parentElement.lastElementChild;
 			errorMessage.style.visibility = 'hidden';
 		})
