@@ -336,7 +336,9 @@ window.onload = function () {
 	function localGetUser() {
 		for (var i = 0; i < inputFields.length; i++) {
 			inputFields[i].value = localStorage.getItem(inputFields[i].name);
-			success(i);
+			if (localStorage.getItem(inputFields[i].name) !== null) {
+				success(i);
+			}
 		}
 	}
 	localGetUser();
