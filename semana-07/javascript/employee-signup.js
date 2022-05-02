@@ -14,52 +14,56 @@ window.onload = function () {
 		inputErrors[i].style.visibility = 'hidden';
 		formData[i].insertBefore(inputErrors[i], null);
 	}
-	var firstNameInput = inputFields[0];
+	var nameInput = inputFields[0];
 	var lastNameInput = inputFields[1];
-	var idNumberInput = inputFields[2];
-	var birthDateInput = inputFields[3];
-	var phoneNumberInput = inputFields[4];
-	var homeAddressInput = inputFields[5];
+	var dniInput = inputFields[2];
+	var bodInput = inputFields[3];
+	var phoneInput = inputFields[4];
+	var addressInput = inputFields[5];
 	var cityInput = inputFields[6];
-	var postalCodeInput = inputFields[7];
+	var zipInput = inputFields[7];
 	var emailInput = inputFields[8];
 	var passwordInput = inputFields[9];
 	var passwordRptInput = inputFields[10];
 	var index;
 	var emailRegex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 	var validAll = [
-		firstNameCheck,
+		nameCheck,
 		lastNameCheck,
-		idNumberCheck,
-		birthDateCheck,
-		phoneNumberCheck,
-		homeAddressCheck,
+		dniCheck,
+		bodCheck,
+		phoneCheck,
+		addressCheck,
 		cityCheck,
-		postalCodeCheck,
+		zipCheck,
 		emailCheck,
 		passwordCheck,
 		passwordRptCheck
 	];
-	function succes(index) {
+	function formatDate(date) {
+		var dateArray = date.split('-');
+		return dateArray[1] + '/' + dateArray[2] + '/' + dateArray[0];
+	}
+	function success(index) {
 		inputErrors[index].style.visibility = 'hidden';
-		inputFields[index].classList.add('succes-form');
-		inputFields[index].classList.replace('error-form', 'succes-form');
+		inputFields[index].classList.add('success-form');
+		inputFields[index].classList.replace('error-form', 'success-form');
 	}
 	function error(index) {
 		inputErrors[index].style.visibility = 'visible';
 		inputFields[index].classList.add('error-form');
-		inputFields[index].classList.replace('succes-form', 'error-form');
+		inputFields[index].classList.replace('success-form', 'error-form');
 	}
-	function firstNameBlur(e) {
+	function nameBlur(e) {
 		index = 0;
-		if (firstNameCheck(e)) {
-			succes(index);
+		if (nameCheck(e)) {
+			success(index);
 		} else {
 			error(index);
 		}
 	}
-	function firstNameCheck() {
-		if (firstNameInput.value.length > 3 && letterOrSpc(firstNameInput.value)) {
+	function nameCheck() {
+		if (nameInput.value.length > 3 && letterOrSpc(nameInput.value)) {
 			return true;
 		} else {
 			return false;
@@ -77,7 +81,7 @@ window.onload = function () {
 	function lastNameBlur(e) {
 		index = 1;
 		if (lastNameCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -89,61 +93,61 @@ window.onload = function () {
 			return false;
 		}
 	}
-	function idNumberBlur(e) {
+	function dniBlur(e) {
 		index = 2;
-		if (idNumberCheck(e)) {
-			succes(index);
+		if (dniCheck(e)) {
+			success(index);
 		} else {
 			error(index);
 		}
 	}
-	function idNumberCheck() {
-		if (idNumberInput.value.length > 7 && numberVal(idNumberInput.value)) {
+	function dniCheck() {
+		if (dniInput.value.length > 7 && numberVal(dniInput.value)) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	function birthDateBlur(e) {
+	function bodBlur(e) {
 		index = 3;
-		if (birthDateCheck(e)) {
-			succes(index);
+		if (bodCheck(e)) {
+			success(index);
 		} else {
 			error(index);
 		}
 	}
-	function birthDateCheck() {
-		if (new Date(birthDateInput.value).getTime() < new Date().getTime()) {
+	function bodCheck() {
+		if (new Date(bodInput.value).getTime() < new Date().getTime()) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	function phoneNumberBlur(e) {
+	function phoneBlur(e) {
 		index = 4;
-		if (phoneNumberCheck(e)) {
-			succes(index);
+		if (phoneCheck(e)) {
+			success(index);
 		} else {
 			error(index);
 		}
 	}
-	function phoneNumberCheck() {
-		if (phoneNumberInput.value.length === 10 && numberVal(phoneNumberInput.value)) {
+	function phoneCheck() {
+		if (phoneInput.value.length === 10 && numberVal(phoneInput.value)) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	function homeAddressBlur(e) {
+	function addressBlur(e) {
 		index = 5;
-		if (homeAddressCheck(e)) {
-			succes(index);
+		if (addressCheck(e)) {
+			success(index);
 		} else {
 			error(index);
 		}
 	}
-	function homeAddressCheck() {
-		if (homeAddressInput.value.length > 4 && stringWithSpace(homeAddressInput.value)) {
+	function addressCheck() {
+		if (addressInput.value.length > 4 && stringWithSpace(addressInput.value)) {
 			return true;
 		} else {
 			return false;
@@ -183,7 +187,7 @@ window.onload = function () {
 	function cityBlur(e) {
 		index = 6;
 		if (cityCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -214,17 +218,17 @@ window.onload = function () {
 		}
 		return letterQ;
 	}
-	function postalCodeBlur(e) {
+	function zipBlur(e) {
 		index = 7;
-		if (postalCodeCheck(e)) {
-			succes(index);
+		if (zipCheck(e)) {
+			success(index);
 		} else {
 			error(index);
 		}
 	}
-	function postalCodeCheck() {
-		if ((postalCodeInput.value.length >= 4 && postalCodeInput.value.length <= 5) &&
-			numberVal(postalCodeInput.value)) {
+	function zipCheck() {
+		if ((zipInput.value.length >= 4 && zipInput.value.length <= 5) &&
+			numberVal(zipInput.value)) {
 			return true;
 		} else {
 			return false;
@@ -233,7 +237,7 @@ window.onload = function () {
 	function emailBlur(e) {
 		index = 8;
 		if (emailCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -248,7 +252,7 @@ window.onload = function () {
 	function passwordBlur(e) {
 		index = 9;
 		if (passwordCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -263,7 +267,7 @@ window.onload = function () {
 	function passwordRptBlur(e) {
 		index = 10;
 		if (passwordRptCheck(e)) {
-			succes(index);
+			success(index);
 		} else {
 			error(index);
 		}
@@ -281,36 +285,59 @@ window.onload = function () {
 		for (var i = 0; i < validAll.length; i++) {
 			if (validAll[i](e)) {
 				validCount++;
-				succes(i);
+				success(i);
 			} else {
 				error(i);
 			}
 		}
-		if (validCount === validAll.length) {
-			alert('User succesfully created!\nFirst name: ' + firstNameInput.value + '\nLast name: ' +
-				lastNameInput.value + '\nId number: ' + idNumberInput.value + '\nDate of birth: ' +
-				birthDateInput.value + '\nPhone number: ' + phoneNumberInput.value + '\nAddress: ' +
-				homeAddressInput.value + '\nCity: ' + cityInput.value + '\nPostal code: ' + postalCodeInput.value +
-				'\nEmail: ' + emailInput.value + '\nPassword: ' + passwordInput.value);
-		} else {
+/* 		if (validCount === validAll.length) { */
+			var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
+			var queryParams = '?name=' + nameInput.value;
+			for (var i = 0; i < formData.length-1; i++) {
+				if (i === 3) {
+					bodFormated = formatDate(bodInput.value);
+					queryParams += '&' + inputFields[i].name + '=' + bodFormated;
+				} else {
+					queryParams += '&' + inputFields[i].name + '=' + inputFields[i].value;
+				}
+			}
+			fetch(url+queryParams)
+			.then( (response) => response.json())
+			.then( (jsonRes) => {
+				if (jsonRes.success) {
+					var dataSuccess = '';
+					for (var i = 0; i < formData.length-1; i++) {
+						dataSuccess += '\n' + labels[i].textContent + ': ' + inputFields[i].value;
+					}
+					alert(jsonRes.msg + '!' + dataSuccess);
+				} else {
+					var errorsMsgs = '';
+					for (var i = 0; i < jsonRes.errors.length; i++) {
+						errorsMsgs += '\n' + jsonRes.errors[i].msg;
+					}
+					alert('Failed at submitting data, please check your inputs!' + errorsMsgs);
+				}
+			})
+			.catch( (error) => alert(error));
+/* 		} else {
 			alert('Failed at submitting data, please check your inputs.');
-		}
+		} */
 	}
-	firstNameInput.addEventListener('blur', firstNameBlur);
+	nameInput.addEventListener('blur', nameBlur);
 	lastNameInput.addEventListener('blur', lastNameBlur);
-	idNumberInput.addEventListener('blur', idNumberBlur);
-	birthDateInput.addEventListener('blur', birthDateBlur);
-	phoneNumberInput.addEventListener('blur', phoneNumberBlur);
-	homeAddressInput.addEventListener('blur', homeAddressBlur);
+	dniInput.addEventListener('blur', dniBlur);
+	bodInput.addEventListener('blur', bodBlur);
+	phoneInput.addEventListener('blur', phoneBlur);
+	addressInput.addEventListener('blur', addressBlur);
 	cityInput.addEventListener('blur', cityBlur);
-	postalCodeInput.addEventListener('blur', postalCodeBlur);
+	zipInput.addEventListener('blur', zipBlur);
 	emailInput.addEventListener('blur', emailBlur);
 	passwordInput.addEventListener('blur', passwordBlur);
 	passwordRptInput.addEventListener('blur', passwordRptBlur);
 	submitBtn.addEventListener('click', submitClick);
 	inputFields.forEach(function (input) {
 		input.addEventListener('focus', function () {
-			input.classList.remove('error-form', 'succes-form');
+			input.classList.remove('error-form', 'success-form');
 			var errorMessage = input.parentElement.lastElementChild;
 			errorMessage.style.visibility = 'hidden';
 		})

@@ -88,12 +88,12 @@ window.onload = function () {
 			.then( (response) => response.json())
 			.then( (jsonRes) => {
 				if (jsonRes.success) {
-					alert(jsonRes.msg + '\nEmail: ' + emailInput.value + '\nPassword: ' + passwordInput.value)
+					alert(jsonRes.msg + '!' + '\nEmail: ' + emailInput.value + '\nPassword: ' + passwordInput.value)
 				} else {
 					alert(jsonRes.msg)
 				}
 			})
-			.catch( (error) => console.log(error))
+			.catch( (error) => alert(error));
 		} else {
 			alert('Email or pasword invalids, please check your inputs.');
 		}
