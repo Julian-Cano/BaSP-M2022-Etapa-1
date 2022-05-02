@@ -85,15 +85,15 @@ window.onload = function () {
 			var url = 'https://basp-m2022-api-rest-server.herokuapp.com/login';
 			var queryParams = '?email=' + email.value + '&password=' + password.value;
 			fetch(url+queryParams)
-			.then( (response) => response.json())
-			.then( (jsonRes) => {
-				if (jsonRes.success) {
-					alert(jsonRes.msg + '!' + '\nEmail: ' + emailInput.value + '\nPassword: ' + passwordInput.value)
-				} else {
-					alert(jsonRes.msg)
-				}
-			})
-			.catch( (error) => alert(error));
+				.then( (response) => response.json())
+				.then( (jsonRes) => {
+					if (jsonRes.success) {
+						alert(jsonRes.msg + '!')
+					} else {
+						alert(jsonRes.msg)
+					}
+				})
+				.catch( (error) => alert(error));
 		} else {
 			alert('Email or pasword invalids, please check your inputs.');
 		}

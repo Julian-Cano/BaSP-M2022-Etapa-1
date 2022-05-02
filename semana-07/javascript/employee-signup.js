@@ -290,10 +290,10 @@ window.onload = function () {
 				error(i);
 			}
 		}
-/* 		if (validCount === validAll.length) { */
+		if (validCount === validAll.length) {
 			var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
 			var queryParams = '?name=' + nameInput.value;
-			for (var i = 0; i < formData.length-1; i++) {
+			for (var i = 1; i < formData.length-1; i++) {
 				if (i === 3) {
 					bodFormated = formatDate(bodInput.value);
 					queryParams += '&' + inputFields[i].name + '=' + bodFormated;
@@ -302,27 +302,44 @@ window.onload = function () {
 				}
 			}
 			fetch(url+queryParams)
-			.then( (response) => response.json())
-			.then( (jsonRes) => {
-				if (jsonRes.success) {
-					var dataSuccess = '';
-					for (var i = 0; i < formData.length-1; i++) {
-						dataSuccess += '\n' + labels[i].textContent + ': ' + inputFields[i].value;
+				.then( (response) => response.json())
+				.then( (jsonRes) => {
+					if (jsonRes.success) {
+						localSetUser();
+						alert(jsonRes.msg + '!' + responseData(jsonRes));
+					} else {
+						var errorsMsgs = '';
+						for (var i = 0; i < jsonRes.errors.length; i++) {
+							errorsMsgs += '\n' + jsonRes.errors[i].msg;
+						}
+						alert('Failed at submitting data, please check your inputs:' + errorsMsgs);
 					}
-					alert(jsonRes.msg + '!' + dataSuccess);
-				} else {
-					var errorsMsgs = '';
-					for (var i = 0; i < jsonRes.errors.length; i++) {
-						errorsMsgs += '\n' + jsonRes.errors[i].msg;
-					}
-					alert('Failed at submitting data, please check your inputs!' + errorsMsgs);
-				}
-			})
-			.catch( (error) => alert(error));
-/* 		} else {
+				})
+				.catch( (error) => alert(error));
+		} else {
 			alert('Failed at submitting data, please check your inputs.');
-		} */
+		}
 	}
+	function responseData(jsonRes) {
+		var msgData = '';
+		var successData = Object.entries(jsonRes.data);
+		for (var i = 1; i < successData.length; i++) {
+			msgData += '\n' + successData[i][0] + ': ' + successData[i][1];
+		}
+		return msgData;
+	}
+	function localSetUser() {
+		for (var i = 0; i < inputFields.length; i++) {
+			localStorage.setItem(inputFields[i].name, inputFields[i].value);
+		}
+	}
+	function localGetUser() {
+		for (var i = 0; i < inputFields.length; i++) {
+			inputFields[i].value = localStorage.getItem(inputFields[i].name);
+			success(i);
+		}
+	}
+	localGetUser();
 	nameInput.addEventListener('blur', nameBlur);
 	lastNameInput.addEventListener('blur', lastNameBlur);
 	dniInput.addEventListener('blur', dniBlur);
