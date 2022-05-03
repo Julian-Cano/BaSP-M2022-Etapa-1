@@ -293,17 +293,17 @@ window.onload = function () {
 		if (validCount === validAll.length) {
 			var url = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
 			var queryParams = '?name=' + nameInput.value;
-			for (var i = 1; i < formData.length-1; i++) {
+			for (var i = 1; i < formData.length - 1; i++) {
 				if (i === 3) {
-					bodFormated = formatDate(bodInput.value);
+					var bodFormated = formatDate(bodInput.value);
 					queryParams += '&' + inputFields[i].name + '=' + bodFormated;
 				} else {
 					queryParams += '&' + inputFields[i].name + '=' + inputFields[i].value;
 				}
 			}
-			fetch(url+queryParams)
-				.then( (response) => response.json())
-				.then( (jsonRes) => {
+			fetch(url + queryParams)
+				.then((response) => response.json())
+				.then((jsonRes) => {
 					if (jsonRes.success) {
 						localSetUser();
 						alert(jsonRes.msg + '!' + responseData(jsonRes));
@@ -315,7 +315,7 @@ window.onload = function () {
 						alert('Failed at submitting data, please check your inputs:' + errorsMsgs);
 					}
 				})
-				.catch( (error) => alert(error));
+				.catch((error) => alert(error));
 		} else {
 			alert('Failed at submitting data, please check your inputs.');
 		}
